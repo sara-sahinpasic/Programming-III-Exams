@@ -1,0 +1,8 @@
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.AssemblyReference.cache
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.KorisniciAdmin.resources
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Login.resources
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Registracija.resources
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.P8.KorisniciPolozeniPredmeti.resources
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Properties.Resources.resources
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.GenerateResource.cache
+C:\Users\saras\Desktop\V_Ispit\Programiranje-3-master\Ispiti\2020-09-04\Postavka\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.CoreCompileInputs.cache
