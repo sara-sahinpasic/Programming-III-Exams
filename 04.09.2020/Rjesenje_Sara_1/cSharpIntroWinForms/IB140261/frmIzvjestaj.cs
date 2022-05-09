@@ -20,24 +20,27 @@ namespace cSharpIntroWinForms.IB140261
 
         private void frmIzvjestaj_Load(object sender, EventArgs e)
         {
-            ReportParameterCollection parametri = new ReportParameterCollection();
-            //parametri.Add(new ReportParameter(,))
+            //ReportParameterCollection parametri = new ReportParameterCollection();
+            ReportParameter pPoruke = new ReportParameter();
+            pPoruke.Name = "pPoruke";
+           // pPoruke.Values.Add(/**/);
 
-            var tblPoruke = new ds.PorukeDataTable();
+            //---------------------------------------------------------------------
+            //var tblPoruke = new ds.PorukeDataTable();
+            DataSet1.PorukeDataTable tabelaPoruke= new DataSet1.PorukeDataTable();
             for (int i = 0; i < 5; i++)
             {
-                var red = tblPoruke.NewPorukeRow();
-                red.Sadrzaj = $"Sadrzaj: {i + 1}";
-                red.Datum = DateTime.Now.ToString("dd.MM.yyyy");
-                tblPoruke.AddPorukeRow(red);
+                var redPoruka = tabelaPoruke.NewPorukeRow();
+                redPoruka.Sadrzaj = //$"Sadrzaj: {i + 1}";
+             //   tabelaPoruke.AddPorukeRow(redPoruka);
             }
-
             ReportDataSource dataSource = new ReportDataSource();
             dataSource.Name = "dsPoruke";
-            dataSource.Value = tblPoruke;
-
+            dataSource.Value = tabelaPoruke;
             this.reportViewer1.LocalReport.DataSources.Add(dataSource);
-            this.reportViewer1.LocalReport.SetParameters(parametri);
+            //---------------------------------------------------------------------
+
+            this.reportViewer1.LocalReport.SetParameters(pPoruke);
             this.reportViewer1.RefreshReport();
         }
     }

@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cSharpIntroWinForms",
+    "\\cSharpIntroWinForms\\IB140261"
   ],
-  "SelectedNode": "\\cSharpIntro.sln",
+  "SelectedNode": "\\cSharpIntroWinForms\\IB140261\\frmIzvjestaj.cs",
   "PreviewInSolutionExplorer": false
 }

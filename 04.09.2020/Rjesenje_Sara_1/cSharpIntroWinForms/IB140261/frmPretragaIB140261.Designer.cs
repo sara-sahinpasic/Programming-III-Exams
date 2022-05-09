@@ -148,6 +148,7 @@ namespace cSharpIntroWinForms.IB140261
             this.txtThread.Name = "txtThread";
             this.txtThread.Size = new System.Drawing.Size(136, 20);
             this.txtThread.TabIndex = 6;
+            this.txtThread.TextChanged += new System.EventHandler(this.txtThread_TextChanged);
             // 
             // lblThreading
             // 

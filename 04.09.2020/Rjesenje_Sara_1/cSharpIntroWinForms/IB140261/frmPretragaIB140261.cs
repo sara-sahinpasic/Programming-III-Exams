@@ -61,7 +61,7 @@ namespace cSharpIntroWinForms.IB140261
             dgvPolozeniPredmet.DataSource = baza.KorisniciPredmeti.ToList();
         }
 
-        private void dgvPolozeniPredmet_CellContentClick(object sender, DataGridViewCellEventArgs e) //Threading
+        private void dgvPolozeniPredmet_CellContentClick(object sender, DataGridViewCellEventArgs e) 
         {
             if (e.ColumnIndex == 4)
             {
@@ -74,7 +74,7 @@ namespace cSharpIntroWinForms.IB140261
             }
         }
 
-        private int IzracunajSumu(int n)
+        private int IzracunajSumu(int n)//Threading
         {
             int suma = 0;
             for (int i = 0; i < n; i++)
@@ -96,6 +96,11 @@ namespace cSharpIntroWinForms.IB140261
             });
 
             lblThreading.Text = suma.ToString();
+        }
+
+        private void txtThread_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

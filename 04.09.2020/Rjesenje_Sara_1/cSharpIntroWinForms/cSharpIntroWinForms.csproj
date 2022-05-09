@@ -77,10 +77,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IB140261\ds.Designer.cs">
+    <Compile Include="IB140261\DataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ds.xsd</DependentUpon>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="IB140261\frmIzvjestaj.cs">
       <SubType>Form</SubType>
@@ -157,7 +157,7 @@
     <EmbeddedResource Include="IB140261\frmPretragaIB140261.resx">
       <DependentUpon>frmPretragaIB140261.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IB140261\rptizvjestaj.rdlc" />
+    <EmbeddedResource Include="IB140261\rptIzvjestaj.rdlc" />
     <EmbeddedResource Include="P6\KorisniciAdmin.resx">
       <DependentUpon>KorisniciAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -183,16 +183,16 @@
     <None Include="DLWMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="IB140261\ds.xsc">
-      <DependentUpon>ds.xsd</DependentUpon>
+    <None Include="IB140261\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
-    <None Include="IB140261\ds.xsd">
+    <None Include="IB140261\DataSet1.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ds.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="IB140261\ds.xss">
-      <DependentUpon>ds.xsd</DependentUpon>
+    <None Include="IB140261\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\cSharpIntroWinForms.P8.KorisniciPolozeniPredmeti.datasource" />
