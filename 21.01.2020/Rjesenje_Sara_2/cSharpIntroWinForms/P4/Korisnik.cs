@@ -24,7 +24,7 @@ namespace cSharpIntroWinForms
         public virtual Spolovi Spol { get; set; }
         //public string Spol { get; set; }
         public bool Admin { get; set; }
-        public List<PolozeniPredmet> Polozeni { get; set; } = new List<PolozeniPredmet>();
+        public virtual List<PolozeniPredmet> Polozeni { get; set; } = new List<PolozeniPredmet>();
         public virtual List<KorisniciPredmeti> Uspjeh { get; set; } = new List<KorisniciPredmeti>();
 
 

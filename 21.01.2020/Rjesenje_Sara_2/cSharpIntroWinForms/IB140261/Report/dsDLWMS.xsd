@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDLWMS" targetNamespace="http://tempuri.org/dsDLWMS.xsd" xmlns:mstns="http://tempuri.org/dsDLWMS.xsd" xmlns="http://tempuri.org/dsDLWMS.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDLWMS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDLWMS" msprop:Generator_UserDSName="dsDLWMS">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ocjene" msprop:Generator_TableClassName="OcjeneDataTable" msprop:Generator_TableVarName="tableOcjene" msprop:Generator_TablePropName="Ocjene" msprop:Generator_RowDeletingName="OcjeneRowDeleting" msprop:Generator_RowChangingName="OcjeneRowChanging" msprop:Generator_RowEvHandlerName="OcjeneRowChangeEventHandler" msprop:Generator_RowDeletedName="OcjeneRowDeleted" msprop:Generator_UserTableName="Ocjene" msprop:Generator_RowChangedName="OcjeneRowChanged" msprop:Generator_RowEvArgName="OcjeneRowChangeEvent" msprop:Generator_RowClassName="OcjeneRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Polozeni" msprop:Generator_ColumnVarNameInTable="columnPolozeni" msprop:Generator_ColumnPropNameInRow="Polozeni" msprop:Generator_ColumnPropNameInTable="PolozeniColumn" msprop:Generator_UserColumnName="Polozeni" type="xs:string" minOccurs="0" />
+              <xs:element name="Nepolozeni" msprop:Generator_ColumnVarNameInTable="columnNepolozeni" msprop:Generator_ColumnPropNameInRow="Nepolozeni" msprop:Generator_ColumnPropNameInTable="NepolozeniColumn" msprop:Generator_UserColumnName="Nepolozeni" type="xs:string" minOccurs="0" />
+              <xs:element name="Ocjena" msprop:Generator_ColumnVarNameInTable="columnOcjena" msprop:Generator_ColumnPropNameInRow="Ocjena" msprop:Generator_ColumnPropNameInTable="OcjenaColumn" msprop:Generator_UserColumnName="Ocjena" type="xs:string" minOccurs="0" />
+              <xs:element name="Datum" msprop:Generator_ColumnVarNameInTable="columnDatum" msprop:Generator_ColumnPropNameInRow="Datum" msprop:Generator_ColumnPropNameInTable="DatumColumn" msprop:Generator_UserColumnName="Datum" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

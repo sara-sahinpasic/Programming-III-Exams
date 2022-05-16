@@ -16,6 +16,7 @@ namespace cSharpIntroWinForms.IB140261
     {
         Korisnik _korisnik;
         KonekcijaNaBazu baza = DLWMS.DB;
+        private KorisniciPorukeIB140261 selektovanaPoruka = null;
 
         public frmNovaPorukaIB140261(Korisnik korisnik)
         {
@@ -23,14 +24,36 @@ namespace cSharpIntroWinForms.IB140261
             _korisnik = korisnik;
         }
 
+        public frmNovaPorukaIB140261(KorisniciPorukeIB140261 poruka)
+        {
+            InitializeComponent();
+            this.selektovanaPoruka = poruka;
+            _korisnik = poruka.Korisnik;
+            UcitajPoruku();
+
+        }
+
+        private void UcitajPoruku()
+        {
+            txtSadrzaj.Text = selektovanaPoruka.Poruke;
+            if (selektovanaPoruka.Slika != null)
+                pbSlika.Image = ImageHelper.FromByteToImage(selektovanaPoruka.Slika);
+
+            txtSadrzaj.ReadOnly = true;
+
+        }
 
         private void frmNovaPorukaIB140261_Load(object sender, EventArgs e)
         {
             txtPrimalac.Text = _korisnik.Ime + " " + _korisnik.Prezime;
+
         }
 
         private void btnSpasi_Click(object sender, EventArgs e)
         {
+            if (selektovanaPoruka != null)
+                this.Close(); // neće se izvršiti kod ukoliko se pozove konstruktor sa Korisnik objektom
+
             var unos = txtSadrzaj.Text;
             var slika = pbSlika.Image;
 
@@ -38,7 +61,7 @@ namespace cSharpIntroWinForms.IB140261
             if (ValidirajUnos())
             {
                 infoPoruke.Poruke = unos;
-                if (infoPoruke.Slika != null)
+                if (slika != null)
                     infoPoruke.Slika = ImageHelper.FromImageToByte(slika);
                 infoPoruke.Korisnik = _korisnik;
                 infoPoruke.DatumVrijemeSlanja = DateTime.Now;
@@ -48,13 +71,17 @@ namespace cSharpIntroWinForms.IB140261
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-            //prikazati unutar DGV-a novo-napisanu poruku
+            //da li treba prikazati (odmah nakon novo-napisane poruke) istu tu poruku unutar DGV-a 
         }
 
         private void pbSlika_Click(object sender, EventArgs e) //prikaz upload-ovane slike (bez icon za error)
         {
-            openFileDialog1.ShowDialog();
-            pbSlika.Image = Image.FromFile(openFileDialog1.FileName);
+            if (selektovanaPoruka != null)
+                return;
+
+            var rezultat = openFileDialog1.ShowDialog();
+            if (rezultat == DialogResult.OK)
+                pbSlika.Image = Image.FromFile(openFileDialog1.FileName);
         }
         private bool ValidirajUnos()
         {

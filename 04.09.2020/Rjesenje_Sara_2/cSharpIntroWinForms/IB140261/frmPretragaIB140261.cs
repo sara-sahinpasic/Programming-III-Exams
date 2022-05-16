@@ -45,6 +45,11 @@ namespace cSharpIntroWinForms.IB140261
             {
                 //pretraga položenih predmeta po nazivu
                 var filter = txtNazivPredmeta.Text.Trim().ToLower();
+                if (string.IsNullOrEmpty(filter))
+                {
+                    UcitajPredmete();
+                    return;
+                }
                 var pretraga = baza.KorisniciPredmeti.Where(x => x.Predmet.Naziv
                 .Trim().ToLower().Contains(filter)).ToList();
 

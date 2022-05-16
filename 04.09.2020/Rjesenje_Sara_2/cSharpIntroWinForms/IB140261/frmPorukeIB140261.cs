@@ -40,7 +40,7 @@ namespace cSharpIntroWinForms.IB140261
         private void btnNovaPoruka_Click(object sender, EventArgs e)
         {
             frmNovaPorukaIB140261 frmNovaPorukaIB140261 = new frmNovaPorukaIB140261(_korisnik);
-            frmNovaPorukaIB140261.Show();
+            frmNovaPorukaIB140261.ShowDialog();
             UcitajDGV();
         }
 
@@ -65,7 +65,9 @@ namespace cSharpIntroWinForms.IB140261
             }
             else //prikazati detalje poruke bez mogućnosti njihove promjene
             {
-                frmNovaPorukaIB140261 frmNovaPorukaIB140261 = new frmNovaPorukaIB140261(_korisnik);
+                KorisniciPorukeIB140261 poruka = dgvPoruke.CurrentRow.DataBoundItem as KorisniciPorukeIB140261;
+
+                frmNovaPorukaIB140261 frmNovaPorukaIB140261 = new frmNovaPorukaIB140261(poruka);
                 frmNovaPorukaIB140261.Show();
             }
         }
@@ -78,6 +80,11 @@ namespace cSharpIntroWinForms.IB140261
                 frmReportIB140261 frmReportIB140261 = new frmReportIB140261(printPoruka);
                 frmReportIB140261.Show();
             }
+        }
+
+        private void dgvPoruke_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

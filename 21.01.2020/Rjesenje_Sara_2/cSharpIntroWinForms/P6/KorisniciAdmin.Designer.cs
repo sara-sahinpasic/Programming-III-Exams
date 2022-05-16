@@ -58,6 +58,7 @@
             this.dgvKorisnici.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKorisnici.Size = new System.Drawing.Size(666, 247);
             this.dgvKorisnici.TabIndex = 0;
+            this.dgvKorisnici.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvKorisnici_CellContentClick);
             // 
             // Ime
             // 
@@ -104,15 +105,14 @@
             this.txtPretraga.Name = "txtPretraga";
             this.txtPretraga.Size = new System.Drawing.Size(666, 20);
             this.txtPretraga.TabIndex = 2;
+            this.txtPretraga.TextChanged += new System.EventHandler(this.txtPretraga_TextChanged);
             // 
             // lblProsjek
             // 
-            this.lblProsjek.AutoSize = true;
-            this.lblProsjek.Location = new System.Drawing.Point(28, 295);
+            this.lblProsjek.Location = new System.Drawing.Point(12, 298);
             this.lblProsjek.Name = "lblProsjek";
-            this.lblProsjek.Size = new System.Drawing.Size(35, 13);
+            this.lblProsjek.Size = new System.Drawing.Size(235, 13);
             this.lblProsjek.TabIndex = 3;
-            this.lblProsjek.Text = "label1";
             // 
             // KorisniciAdmin
             // 
@@ -136,12 +136,12 @@
 
         private System.Windows.Forms.DataGridView dgvKorisnici;
         private System.Windows.Forms.TextBox txtPretraga;
-        private System.Windows.Forms.Label lblProsjek;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prezime;
         private System.Windows.Forms.DataGridViewTextBoxColumn Spol;
         private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
         private System.Windows.Forms.DataGridViewButtonColumn Polozeni;
+        private System.Windows.Forms.Label lblProsjek;
     }
 }

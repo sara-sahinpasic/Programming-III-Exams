@@ -29,8 +29,6 @@ namespace cSharpIntroWinForms
             LoadData();
         }
 
-
-
         private void LoadData(List<Korisnik> korisnici = null)
         {
             try
@@ -47,6 +45,42 @@ namespace cSharpIntroWinForms
             }
         }
 
+        private void txtPretraga_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                var filter = txtPretraga.Text.Trim().ToLower();
+                var pretraga = konekcijaNaBazu.Korisnici.Where
+                    (x => x.Ime.Trim().ToLower().Contains(filter)
+                    || x.Prezime.Trim().ToLower().Contains(filter)).ToList();
 
+
+                double brojac = 0, suma = 0;
+                for (int i = 0; i < pretraga.Count; i++)
+                {
+                    suma = pretraga[i].Uspjeh.Sum(x => x.Ocjena);
+                    brojac = pretraga[i].Uspjeh.Count;
+                }
+
+                lblProsjek.Text = $"Prosjek ocjena je: {suma / brojac}";
+                LoadData(pretraga);
+            }
+            catch (Exception ex)
+            {
+                MboxHelper.PrikaziGresku(ex);
+            }
+        }
+
+
+
+        private void dgvKorisnici_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                var x = dgvKorisnici.CurrentRow.DataBoundItem as Korisnik;
+                KorisniciPolozeniPredmeti korisniciPolozeniPredmeti = new KorisniciPolozeniPredmeti(x);
+                korisniciPolozeniPredmeti.Show();
+            }          
+        }
     }
 }

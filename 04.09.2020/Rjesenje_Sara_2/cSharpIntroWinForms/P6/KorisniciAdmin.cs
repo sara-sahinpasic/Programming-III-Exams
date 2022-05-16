@@ -27,7 +27,7 @@ namespace cSharpIntroWinForms
         private void KorisniciAdmin_Load(object sender, EventArgs e)
         {
             LoadData();
-            txtPretraga.Select();
+            //txtPretraga.Select();
         }
 
         private void LoadData(List<Korisnik> korisnici = null)

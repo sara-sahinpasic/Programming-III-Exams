@@ -164,9 +164,9 @@ namespace cSharpIntroWinForms.IB140261
             // 
             // lblProsjekOcjena
             // 
-            this.lblProsjekOcjena.Location = new System.Drawing.Point(155, 304);
+            this.lblProsjekOcjena.Location = new System.Drawing.Point(155, 314);
             this.lblProsjekOcjena.Name = "lblProsjekOcjena";
-            this.lblProsjekOcjena.Size = new System.Drawing.Size(100, 23);
+            this.lblProsjekOcjena.Size = new System.Drawing.Size(53, 13);
             this.lblProsjekOcjena.TabIndex = 9;
             // 
             // groupBox1

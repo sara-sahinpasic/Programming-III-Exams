@@ -226,3 +226,6 @@ C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroW
 C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.CopyComplete
 C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.exe
 C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.pdb
+C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\RdlCompile.cache
+C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\RdlCompile.compiled
+C:\Users\saras\source\repos\PRIII-Ispiti\21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.IB140261.Report.frmIzvjestajIB140261.resources

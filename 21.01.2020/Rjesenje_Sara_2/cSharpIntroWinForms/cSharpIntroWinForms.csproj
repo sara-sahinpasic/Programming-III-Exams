@@ -77,6 +77,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IB140261\Report\dsDLWMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Report\frmIzvjestajIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Report\frmIzvjestajIB140261.Designer.cs">
+      <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
+    </Compile>
     <Compile Include="P10\DLWMS.cs" />
     <Compile Include="P10\KorisniciPredmeti.cs" />
     <Compile Include="P10\MboxHelper.cs" />
@@ -101,6 +112,10 @@
     <Compile Include="P9\KonekcijaNaBazu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IB140261\Report\frmIzvjestajIB140261.resx">
+      <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Report\rptOcjene.rdlc" />
     <EmbeddedResource Include="P6\KorisniciAdmin.resx">
       <DependentUpon>KorisniciAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,6 +134,17 @@
     </Compile>
     <None Include="DLWMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="IB140261\Report\dsDLWMS.xsc">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </None>
+    <None Include="IB140261\Report\dsDLWMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDLWMS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IB140261\Report\dsDLWMS.xss">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

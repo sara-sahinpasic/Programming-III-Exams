@@ -70,6 +70,10 @@ namespace cSharpIntroWinForms.IB140261
             // 
             // dgvPoruke
             // 
+            this.dgvPoruke.AllowUserToAddRows = false;
+            this.dgvPoruke.AllowUserToDeleteRows = false;
+            this.dgvPoruke.AllowUserToResizeColumns = false;
+            this.dgvPoruke.AllowUserToResizeRows = false;
             this.dgvPoruke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPoruke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Datum,
@@ -78,9 +82,11 @@ namespace cSharpIntroWinForms.IB140261
             this.Brisi});
             this.dgvPoruke.Location = new System.Drawing.Point(12, 49);
             this.dgvPoruke.Name = "dgvPoruke";
+            this.dgvPoruke.ReadOnly = true;
             this.dgvPoruke.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoruke.Size = new System.Drawing.Size(696, 184);
             this.dgvPoruke.TabIndex = 3;
+            this.dgvPoruke.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoruke_CellContentClick);
             this.dgvPoruke.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoruke_CellContentDoubleClick);
             // 
             // Datum
@@ -90,6 +96,7 @@ namespace cSharpIntroWinForms.IB140261
             this.Datum.FillWeight = 81.21828F;
             this.Datum.HeaderText = "Datum";
             this.Datum.Name = "Datum";
+            this.Datum.ReadOnly = true;
             // 
             // Sadrzaj
             // 
@@ -98,6 +105,7 @@ namespace cSharpIntroWinForms.IB140261
             this.Sadrzaj.FillWeight = 194.6498F;
             this.Sadrzaj.HeaderText = "Sadržaj";
             this.Sadrzaj.Name = "Sadrzaj";
+            this.Sadrzaj.ReadOnly = true;
             // 
             // Slika
             // 
@@ -106,6 +114,7 @@ namespace cSharpIntroWinForms.IB140261
             this.Slika.FillWeight = 46.99606F;
             this.Slika.HeaderText = "Slika";
             this.Slika.Name = "Slika";
+            this.Slika.ReadOnly = true;
             this.Slika.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Slika.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -115,6 +124,7 @@ namespace cSharpIntroWinForms.IB140261
             this.Brisi.FillWeight = 77.13586F;
             this.Brisi.HeaderText = "Briši";
             this.Brisi.Name = "Brisi";
+            this.Brisi.ReadOnly = true;
             this.Brisi.Text = "Briši";
             this.Brisi.UseColumnTextForButtonValue = true;
             // 
