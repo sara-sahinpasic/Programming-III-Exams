@@ -23,11 +23,25 @@ namespace DLWMS.WinForms.Entiteti
         public DateTime DatumRodjenja { get; set; }     
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
-        public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
+        public virtual List<StudentiPredmeti> PolozeniPredmeti { get; set; }
+
+        public double ProsjecnaOcjena {
+            get 
+            {
+                if (PolozeniPredmeti.Count == 0)
+                    return 0;
+                double prosjek = 0;
+                for (int i = 0; i < PolozeniPredmeti.Count; i++)
+                {
+                    prosjek += PolozeniPredmeti[i].Ocjena;
+                }
+                return prosjek / PolozeniPredmeti.Count;
+            } }
+
         public virtual ICollection<Uloga> Uloge { get; set; }
         public Student()
         {
-            PolozeniPredmeti = new List<PolozeniPredmet>();
+            PolozeniPredmeti = new List<StudentiPredmeti>();
             Uloge = new HashSet<Uloga>();
         }
         public override string ToString()

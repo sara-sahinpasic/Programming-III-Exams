@@ -1,4 +1,5 @@
 ﻿using DLWMS.WinForms.Entiteti;
+//using DLWMS.WinForms.IspitIB140261;
 using System.Data.Entity;
 
 namespace DLWMS.WinForms.Helpers
@@ -8,12 +9,13 @@ namespace DLWMS.WinForms.Helpers
         public KonekcijaNaBazu() : base("PutanjaDoBaze")
         {
         }
-        
+
         public virtual DbSet<Student> Studenti { get; set; }
         public virtual DbSet<Spol> Spolovi { get; set; }
         public virtual DbSet<Predmet> Predmet { get; set; }
         public virtual DbSet<StudentiPredmeti> StudentiPredmeti { get; set; }
         public virtual DbSet<Uloga> Uloge { get; set; }
+
 
 
 
@@ -24,7 +26,7 @@ namespace DLWMS.WinForms.Helpers
             modelBuilder.Entity<Student>()
                 .HasMany(x => x.Uloge)
                 .WithMany(u => u.Studenti)
-                .Map(su => 
+                .Map(su =>
                 {
                     su.MapLeftKey("Student_Id");
                     su.MapRightKey("Uloga_Id");

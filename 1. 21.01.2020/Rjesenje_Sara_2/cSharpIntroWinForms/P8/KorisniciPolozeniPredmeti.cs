@@ -116,8 +116,8 @@ namespace cSharpIntroWinForms.P8
         }
         private void btnPrintajUvjerenje_Click(object sender, EventArgs e)
         {
-            frmIzvjestajIB140261 frmIzvjestajIB140261 = new frmIzvjestajIB140261(_korisnik);
-            frmIzvjestajIB140261.Show();
+            frmIzvjestajIB140261_1 frmIzvjestajIB140261_1 = new frmIzvjestajIB140261_1(_korisnik);
+            frmIzvjestajIB140261_1.ShowDialog();
         }
 
         private void btnASYNC_Click(object sender, EventArgs e)

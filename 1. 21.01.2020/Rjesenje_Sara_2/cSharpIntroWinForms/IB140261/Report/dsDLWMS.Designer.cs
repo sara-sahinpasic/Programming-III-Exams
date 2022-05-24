@@ -24,7 +24,7 @@ namespace cSharpIntroWinForms.IB140261.Report {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsDLWMS : global::System.Data.DataSet {
         
-        private OcjeneDataTable tableOcjene;
+        private PredmetiDataTable tablePredmeti;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Ocjene"] != null)) {
-                    base.Tables.Add(new OcjeneDataTable(ds.Tables["Ocjene"]));
+                if ((ds.Tables["Predmeti"] != null)) {
+                    base.Tables.Add(new PredmetiDataTable(ds.Tables["Predmeti"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace cSharpIntroWinForms.IB140261.Report {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public OcjeneDataTable Ocjene {
+        public PredmetiDataTable Predmeti {
             get {
-                return this.tableOcjene;
+                return this.tablePredmeti;
             }
         }
         
@@ -152,8 +152,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Ocjene"] != null)) {
-                    base.Tables.Add(new OcjeneDataTable(ds.Tables["Ocjene"]));
+                if ((ds.Tables["Predmeti"] != null)) {
+                    base.Tables.Add(new PredmetiDataTable(ds.Tables["Predmeti"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace cSharpIntroWinForms.IB140261.Report {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableOcjene = ((OcjeneDataTable)(base.Tables["Ocjene"]));
+            this.tablePredmeti = ((PredmetiDataTable)(base.Tables["Predmeti"]));
             if ((initTable == true)) {
-                if ((this.tableOcjene != null)) {
-                    this.tableOcjene.InitVars();
+                if ((this.tablePredmeti != null)) {
+                    this.tablePredmeti.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace cSharpIntroWinForms.IB140261.Report {
             this.Namespace = "http://tempuri.org/dsDLWMS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableOcjene = new OcjeneDataTable();
-            base.Tables.Add(this.tableOcjene);
+            this.tablePredmeti = new PredmetiDataTable();
+            base.Tables.Add(this.tablePredmeti);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeOcjene() {
+        private bool ShouldSerializePredmeti() {
             return false;
         }
         
@@ -270,18 +270,16 @@ namespace cSharpIntroWinForms.IB140261.Report {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void OcjeneRowChangeEventHandler(object sender, OcjeneRowChangeEvent e);
+        public delegate void PredmetiRowChangeEventHandler(object sender, PredmetiRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class OcjeneDataTable : global::System.Data.TypedTableBase<OcjeneRow> {
+        public partial class PredmetiDataTable : global::System.Data.TypedTableBase<PredmetiRow> {
             
-            private global::System.Data.DataColumn columnPolozeni;
-            
-            private global::System.Data.DataColumn columnNepolozeni;
+            private global::System.Data.DataColumn columnPredmet;
             
             private global::System.Data.DataColumn columnOcjena;
             
@@ -289,8 +287,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneDataTable() {
-                this.TableName = "Ocjene";
+            public PredmetiDataTable() {
+                this.TableName = "Predmeti";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +296,7 @@ namespace cSharpIntroWinForms.IB140261.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OcjeneDataTable(global::System.Data.DataTable table) {
+            internal PredmetiDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,24 +313,16 @@ namespace cSharpIntroWinForms.IB140261.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected OcjeneDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected PredmetiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PolozeniColumn {
+            public global::System.Data.DataColumn PredmetColumn {
                 get {
-                    return this.columnPolozeni;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NepolozeniColumn {
-                get {
-                    return this.columnNepolozeni;
+                    return this.columnPredmet;
                 }
             }
             
@@ -363,48 +353,47 @@ namespace cSharpIntroWinForms.IB140261.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneRow this[int index] {
+            public PredmetiRow this[int index] {
                 get {
-                    return ((OcjeneRow)(this.Rows[index]));
+                    return ((PredmetiRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OcjeneRowChangeEventHandler OcjeneRowChanging;
+            public event PredmetiRowChangeEventHandler PredmetiRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OcjeneRowChangeEventHandler OcjeneRowChanged;
+            public event PredmetiRowChangeEventHandler PredmetiRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OcjeneRowChangeEventHandler OcjeneRowDeleting;
+            public event PredmetiRowChangeEventHandler PredmetiRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event OcjeneRowChangeEventHandler OcjeneRowDeleted;
+            public event PredmetiRowChangeEventHandler PredmetiRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddOcjeneRow(OcjeneRow row) {
+            public void AddPredmetiRow(PredmetiRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneRow AddOcjeneRow(string Polozeni, string Nepolozeni, string Ocjena, string Datum) {
-                OcjeneRow rowOcjeneRow = ((OcjeneRow)(this.NewRow()));
+            public PredmetiRow AddPredmetiRow(string Predmet, string Ocjena, string Datum) {
+                PredmetiRow rowPredmetiRow = ((PredmetiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Polozeni,
-                        Nepolozeni,
+                        Predmet,
                         Ocjena,
                         Datum};
-                rowOcjeneRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowOcjeneRow);
-                return rowOcjeneRow;
+                rowPredmetiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPredmetiRow);
+                return rowPredmetiRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                OcjeneDataTable cln = ((OcjeneDataTable)(base.Clone()));
+                PredmetiDataTable cln = ((PredmetiDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,14 +401,13 @@ namespace cSharpIntroWinForms.IB140261.Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new OcjeneDataTable();
+                return new PredmetiDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnPolozeni = base.Columns["Polozeni"];
-                this.columnNepolozeni = base.Columns["Nepolozeni"];
+                this.columnPredmet = base.Columns["Predmet"];
                 this.columnOcjena = base.Columns["Ocjena"];
                 this.columnDatum = base.Columns["Datum"];
             }
@@ -427,10 +415,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnPolozeni = new global::System.Data.DataColumn("Polozeni", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPolozeni);
-                this.columnNepolozeni = new global::System.Data.DataColumn("Nepolozeni", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNepolozeni);
+                this.columnPredmet = new global::System.Data.DataColumn("Predmet", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPredmet);
                 this.columnOcjena = new global::System.Data.DataColumn("Ocjena", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOcjena);
                 this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(string), null, global::System.Data.MappingType.Element);
@@ -439,28 +425,28 @@ namespace cSharpIntroWinForms.IB140261.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneRow NewOcjeneRow() {
-                return ((OcjeneRow)(this.NewRow()));
+            public PredmetiRow NewPredmetiRow() {
+                return ((PredmetiRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new OcjeneRow(builder);
+                return new PredmetiRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(OcjeneRow);
+                return typeof(PredmetiRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.OcjeneRowChanged != null)) {
-                    this.OcjeneRowChanged(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
+                if ((this.PredmetiRowChanged != null)) {
+                    this.PredmetiRowChanged(this, new PredmetiRowChangeEvent(((PredmetiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +454,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.OcjeneRowChanging != null)) {
-                    this.OcjeneRowChanging(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
+                if ((this.PredmetiRowChanging != null)) {
+                    this.PredmetiRowChanging(this, new PredmetiRowChangeEvent(((PredmetiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +463,8 @@ namespace cSharpIntroWinForms.IB140261.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.OcjeneRowDeleted != null)) {
-                    this.OcjeneRowDeleted(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
+                if ((this.PredmetiRowDeleted != null)) {
+                    this.PredmetiRowDeleted(this, new PredmetiRowChangeEvent(((PredmetiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +472,14 @@ namespace cSharpIntroWinForms.IB140261.Report {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.OcjeneRowDeleting != null)) {
-                    this.OcjeneRowDeleting(this, new OcjeneRowChangeEvent(((OcjeneRow)(e.Row)), e.Action));
+                if ((this.PredmetiRowDeleting != null)) {
+                    this.PredmetiRowDeleting(this, new PredmetiRowChangeEvent(((PredmetiRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveOcjeneRow(OcjeneRow row) {
+            public void RemovePredmetiRow(PredmetiRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -520,7 +506,7 @@ namespace cSharpIntroWinForms.IB140261.Report {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "OcjeneDataTable";
+                attribute2.FixedValue = "PredmetiDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,46 +550,30 @@ namespace cSharpIntroWinForms.IB140261.Report {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class OcjeneRow : global::System.Data.DataRow {
+        public partial class PredmetiRow : global::System.Data.DataRow {
             
-            private OcjeneDataTable tableOcjene;
+            private PredmetiDataTable tablePredmeti;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal OcjeneRow(global::System.Data.DataRowBuilder rb) : 
+            internal PredmetiRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableOcjene = ((OcjeneDataTable)(this.Table));
+                this.tablePredmeti = ((PredmetiDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Polozeni {
+            public string Predmet {
                 get {
                     try {
-                        return ((string)(this[this.tableOcjene.PolozeniColumn]));
+                        return ((string)(this[this.tablePredmeti.PredmetColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Polozeni\' in table \'Ocjene\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Predmet\' in table \'Predmeti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOcjene.PolozeniColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Nepolozeni {
-                get {
-                    try {
-                        return ((string)(this[this.tableOcjene.NepolozeniColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Nepolozeni\' in table \'Ocjene\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableOcjene.NepolozeniColumn] = value;
+                    this[this.tablePredmeti.PredmetColumn] = value;
                 }
             }
             
@@ -612,14 +582,14 @@ namespace cSharpIntroWinForms.IB140261.Report {
             public string Ocjena {
                 get {
                     try {
-                        return ((string)(this[this.tableOcjene.OcjenaColumn]));
+                        return ((string)(this[this.tablePredmeti.OcjenaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ocjena\' in table \'Ocjene\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ocjena\' in table \'Predmeti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOcjene.OcjenaColumn] = value;
+                    this[this.tablePredmeti.OcjenaColumn] = value;
                 }
             }
             
@@ -628,63 +598,51 @@ namespace cSharpIntroWinForms.IB140261.Report {
             public string Datum {
                 get {
                     try {
-                        return ((string)(this[this.tableOcjene.DatumColumn]));
+                        return ((string)(this[this.tablePredmeti.DatumColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'Ocjene\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'Predmeti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableOcjene.DatumColumn] = value;
+                    this[this.tablePredmeti.DatumColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPolozeniNull() {
-                return this.IsNull(this.tableOcjene.PolozeniColumn);
+            public bool IsPredmetNull() {
+                return this.IsNull(this.tablePredmeti.PredmetColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPolozeniNull() {
-                this[this.tableOcjene.PolozeniColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNepolozeniNull() {
-                return this.IsNull(this.tableOcjene.NepolozeniColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNepolozeniNull() {
-                this[this.tableOcjene.NepolozeniColumn] = global::System.Convert.DBNull;
+            public void SetPredmetNull() {
+                this[this.tablePredmeti.PredmetColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsOcjenaNull() {
-                return this.IsNull(this.tableOcjene.OcjenaColumn);
+                return this.IsNull(this.tablePredmeti.OcjenaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetOcjenaNull() {
-                this[this.tableOcjene.OcjenaColumn] = global::System.Convert.DBNull;
+                this[this.tablePredmeti.OcjenaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsDatumNull() {
-                return this.IsNull(this.tableOcjene.DatumColumn);
+                return this.IsNull(this.tablePredmeti.DatumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDatumNull() {
-                this[this.tableOcjene.DatumColumn] = global::System.Convert.DBNull;
+                this[this.tablePredmeti.DatumColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +650,22 @@ namespace cSharpIntroWinForms.IB140261.Report {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class OcjeneRowChangeEvent : global::System.EventArgs {
+        public class PredmetiRowChangeEvent : global::System.EventArgs {
             
-            private OcjeneRow eventRow;
+            private PredmetiRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneRowChangeEvent(OcjeneRow row, global::System.Data.DataRowAction action) {
+            public PredmetiRowChangeEvent(PredmetiRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public OcjeneRow Row {
+            public PredmetiRow Row {
                 get {
                     return this.eventRow;
                 }

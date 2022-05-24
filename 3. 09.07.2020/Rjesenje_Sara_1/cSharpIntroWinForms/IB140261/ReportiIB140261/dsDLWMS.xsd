@@ -12,13 +12,13 @@
   <xs:element name="dsDLWMS" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDLWMS" msprop:Generator_UserDSName="dsDLWMS">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent" msprop:Generator_RowClassName="PredmetiRow">
+        <xs:element name="Predmeti" msprop:Generator_TableClassName="PredmetiDataTable" msprop:Generator_TableVarName="tablePredmeti" msprop:Generator_RowChangedName="PredmetiRowChanged" msprop:Generator_TablePropName="Predmeti" msprop:Generator_RowDeletingName="PredmetiRowDeleting" msprop:Generator_RowChangingName="PredmetiRowChanging" msprop:Generator_RowEvHandlerName="PredmetiRowChangeEventHandler" msprop:Generator_RowDeletedName="PredmetiRowDeleted" msprop:Generator_RowClassName="PredmetiRow" msprop:Generator_UserTableName="Predmeti" msprop:Generator_RowEvArgName="PredmetiRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Korisnik" msprop:Generator_ColumnVarNameInTable="columnKorisnik" msprop:Generator_ColumnPropNameInRow="Korisnik" msprop:Generator_ColumnPropNameInTable="KorisnikColumn" msprop:Generator_UserColumnName="Korisnik" type="xs:string" minOccurs="0" />
               <xs:element name="Predmet" msprop:Generator_ColumnVarNameInTable="columnPredmet" msprop:Generator_ColumnPropNameInRow="Predmet" msprop:Generator_ColumnPropNameInTable="PredmetColumn" msprop:Generator_UserColumnName="Predmet" type="xs:string" minOccurs="0" />
               <xs:element name="Ocjena" msprop:Generator_ColumnVarNameInTable="columnOcjena" msprop:Generator_ColumnPropNameInRow="Ocjena" msprop:Generator_ColumnPropNameInTable="OcjenaColumn" msprop:Generator_UserColumnName="Ocjena" type="xs:string" minOccurs="0" />
               <xs:element name="Datum" msprop:Generator_ColumnVarNameInTable="columnDatum" msprop:Generator_ColumnPropNameInRow="Datum" msprop:Generator_ColumnPropNameInTable="DatumColumn" msprop:Generator_UserColumnName="Datum" type="xs:string" minOccurs="0" />
+              <xs:element name="ImePrezime" msprop:Generator_ColumnVarNameInTable="columnImePrezime" msprop:Generator_ColumnPropNameInRow="ImePrezime" msprop:Generator_ColumnPropNameInTable="ImePrezimeColumn" msprop:Generator_UserColumnName="ImePrezime" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

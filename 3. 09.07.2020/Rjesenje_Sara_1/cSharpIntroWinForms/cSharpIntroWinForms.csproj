@@ -95,6 +95,12 @@
     <Compile Include="IB140261\ReportiIB140261\frmIzvjestajIB140261.Designer.cs">
       <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
     </Compile>
+    <Compile Include="IB140261\ReportiIB140261\frmProba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\ReportiIB140261\frmProba.Designer.cs">
+      <DependentUpon>frmProba.cs</DependentUpon>
+    </Compile>
     <Compile Include="P10\DLWMS.cs" />
     <Compile Include="P10\KorisniciPredmeti.cs" />
     <Compile Include="P10\MboxHelper.cs" />
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IB140261\ReportiIB140261\frmIzvjestajIB140261.resx">
       <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\ReportiIB140261\frmProba.resx">
+      <DependentUpon>frmProba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IB140261\ReportiIB140261\rptPredmeti.rdlc" />
     <EmbeddedResource Include="P6\KorisniciAdmin.resx">

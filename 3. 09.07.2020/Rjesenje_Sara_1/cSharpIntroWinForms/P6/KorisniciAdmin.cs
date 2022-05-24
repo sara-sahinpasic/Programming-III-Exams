@@ -33,8 +33,6 @@ namespace cSharpIntroWinForms
             LoadData_Spolovi();
         }
 
-
-
         private void LoadData_Spolovi(List<Spolovi> spolovi = null)
         {
             try
@@ -49,7 +47,6 @@ namespace cSharpIntroWinForms
             }
 
         }
-
         private void LoadData(List<Korisnik> korisnici = null)
         {
             try
@@ -113,12 +110,14 @@ namespace cSharpIntroWinForms
 
         private void btnPrintajPolozene_Click(object sender, EventArgs e)
         {
-            var izvjestajKorisnik = dgvKorisnici.DataSource as List<KorisniciPredmeti>;
-            if (izvjestajKorisnik?.Count > 0)
-            {
-                frmIzvjestajIB140261 frmIzvjestajIB140261 = new frmIzvjestajIB140261(izvjestajKorisnik);
-                frmIzvjestajIB140261.ShowDialog();
-            }
+            var izvjestajKorisnik = dgvKorisnici.DataSource as List<Korisnik>;
+            // //if (izvjestajKorisnik?.Count > 0)
+            //// {
+            //     frmIzvjestajIB140261 frmIzvjestajIB140261 = new frmIzvjestajIB140261(izvjestajKorisnik);
+            //     frmIzvjestajIB140261.ShowDialog();
+            //// }
+            frmProba frmProba = new frmProba(izvjestajKorisnik);
+            frmProba.Show();
         }
 
         private async void btnSuma_Click(object sender, EventArgs e)

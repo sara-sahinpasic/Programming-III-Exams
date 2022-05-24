@@ -13,21 +13,25 @@ using System.Windows.Forms;
 
 namespace cSharpIntroWinForms.IB140261.Report
 {
-    public partial class frmIzvjestajIB140261 : Form
+    public partial class frmIzvjestajIB140261_1 : Form
     {
         private Korisnik _korisnik;
         private KonekcijaNaBazu baza = DLWMS.DB;
         private List<Predmeti> _predmeti = new List<Predmeti>();
 
-        public frmIzvjestajIB140261(Korisnik korisnik)
+
+        public frmIzvjestajIB140261_1()
         {
             InitializeComponent();
-            _korisnik = korisnik;
             _predmeti = baza.Predmeti.ToList();
         }
 
+        public frmIzvjestajIB140261_1(Korisnik korisnik) : this()
+        {
+            this._korisnik = korisnik;
+        }
 
-        private void frmIzvjestajIB140261_Load(object sender, EventArgs e)
+        private void frmIzvjestajIB140261_1_Load(object sender, EventArgs e)
         {
             var rpc = new ReportParameterCollection();
             rpc.Add(new ReportParameter("Ime", _korisnik.Ime));

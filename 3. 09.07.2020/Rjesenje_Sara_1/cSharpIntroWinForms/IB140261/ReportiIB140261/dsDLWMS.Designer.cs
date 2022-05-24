@@ -279,13 +279,13 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class PredmetiDataTable : global::System.Data.TypedTableBase<PredmetiRow> {
             
-            private global::System.Data.DataColumn columnKorisnik;
-            
             private global::System.Data.DataColumn columnPredmet;
             
             private global::System.Data.DataColumn columnOcjena;
             
             private global::System.Data.DataColumn columnDatum;
+            
+            private global::System.Data.DataColumn columnImePrezime;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -322,14 +322,6 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn KorisnikColumn {
-                get {
-                    return this.columnKorisnik;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn PredmetColumn {
                 get {
                     return this.columnPredmet;
@@ -349,6 +341,14 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             public global::System.Data.DataColumn DatumColumn {
                 get {
                     return this.columnDatum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImePrezimeColumn {
+                get {
+                    return this.columnImePrezime;
                 }
             }
             
@@ -389,13 +389,13 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PredmetiRow AddPredmetiRow(string Korisnik, string Predmet, string Ocjena, string Datum) {
+            public PredmetiRow AddPredmetiRow(string Predmet, string Ocjena, string Datum, string ImePrezime) {
                 PredmetiRow rowPredmetiRow = ((PredmetiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Korisnik,
                         Predmet,
                         Ocjena,
-                        Datum};
+                        Datum,
+                        ImePrezime};
                 rowPredmetiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPredmetiRow);
                 return rowPredmetiRow;
@@ -418,23 +418,23 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnKorisnik = base.Columns["Korisnik"];
                 this.columnPredmet = base.Columns["Predmet"];
                 this.columnOcjena = base.Columns["Ocjena"];
                 this.columnDatum = base.Columns["Datum"];
+                this.columnImePrezime = base.Columns["ImePrezime"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnKorisnik = new global::System.Data.DataColumn("Korisnik", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKorisnik);
                 this.columnPredmet = new global::System.Data.DataColumn("Predmet", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPredmet);
                 this.columnOcjena = new global::System.Data.DataColumn("Ocjena", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnOcjena);
                 this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDatum);
+                this.columnImePrezime = new global::System.Data.DataColumn("ImePrezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImePrezime);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -577,22 +577,6 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Korisnik {
-                get {
-                    try {
-                        return ((string)(this[this.tablePredmeti.KorisnikColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Korisnik\' in table \'Predmeti\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePredmeti.KorisnikColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Predmet {
                 get {
                     try {
@@ -641,14 +625,18 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsKorisnikNull() {
-                return this.IsNull(this.tablePredmeti.KorisnikColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetKorisnikNull() {
-                this[this.tablePredmeti.KorisnikColumn] = global::System.Convert.DBNull;
+            public string ImePrezime {
+                get {
+                    try {
+                        return ((string)(this[this.tablePredmeti.ImePrezimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImePrezime\' in table \'Predmeti\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePredmeti.ImePrezimeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -685,6 +673,18 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDatumNull() {
                 this[this.tablePredmeti.DatumColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsImePrezimeNull() {
+                return this.IsNull(this.tablePredmeti.ImePrezimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImePrezimeNull() {
+                this[this.tablePredmeti.ImePrezimeColumn] = global::System.Convert.DBNull;
             }
         }
         
