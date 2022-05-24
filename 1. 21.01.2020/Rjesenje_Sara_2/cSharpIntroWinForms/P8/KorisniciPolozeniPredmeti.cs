@@ -145,8 +145,10 @@ namespace cSharpIntroWinForms.P8
                         _korisnik.Uspjeh.Add(noviPolozeni);
                         konekcijaNaBazu.SaveChanges();
                     }
-                    MessageBox.Show("Uspješno je dodano 500 predmeta");
+                    //MessageBox.Show("Uspješno je dodano 500 predmeta");
                 });
+                LoadDataDGV();
+                MessageBox.Show("Uspješno je dodano 500 predmeta");
             }
             catch (Exception ex)
             {

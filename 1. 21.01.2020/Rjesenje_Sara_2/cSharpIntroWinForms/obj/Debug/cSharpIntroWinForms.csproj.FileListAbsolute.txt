@@ -297,7 +297,6 @@ C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpInt
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.csproj.AssemblyReference.cache
-C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.IB140261.Report.frmIzvjestajIB140261.resources
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.KorisniciAdmin.resources
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.P8.KorisniciPolozeniPredmeti.resources
 C:\Users\saras\source\repos\PRIII-Ispiti\1. 21.01.2020\Rjesenje_Sara_2\cSharpIntroWinForms\obj\Debug\cSharpIntroWinForms.Properties.Resources.resources
