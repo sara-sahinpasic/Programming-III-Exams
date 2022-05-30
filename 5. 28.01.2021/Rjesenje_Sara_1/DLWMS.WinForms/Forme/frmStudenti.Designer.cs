@@ -46,6 +46,8 @@
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblBrojStudenata = new System.Windows.Forms.Label();
             this.lblProsjekStudenata = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnGenerisiPotvrde = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudenti)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
@@ -195,13 +197,34 @@
             this.lblProsjekStudenata.Name = "lblProsjekStudenata";
             this.lblProsjekStudenata.Size = new System.Drawing.Size(0, 13);
             this.lblProsjekStudenata.TabIndex = 9;
-            this.lblProsjekStudenata.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(592, 319);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(121, 32);
+            this.btnPrint.TabIndex = 10;
+            this.btnPrint.Text = "Printaj";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnGenerisiPotvrde
+            // 
+            this.btnGenerisiPotvrde.Location = new System.Drawing.Point(465, 319);
+            this.btnGenerisiPotvrde.Name = "btnGenerisiPotvrde";
+            this.btnGenerisiPotvrde.Size = new System.Drawing.Size(121, 32);
+            this.btnGenerisiPotvrde.TabIndex = 11;
+            this.btnGenerisiPotvrde.Text = "Potvrde";
+            this.btnGenerisiPotvrde.UseVisualStyleBackColor = true;
+            this.btnGenerisiPotvrde.Click += new System.EventHandler(this.btnGenerisiPotvrde_Click);
             // 
             // frmStudenti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 396);
+            this.ClientSize = new System.Drawing.Size(728, 384);
+            this.Controls.Add(this.btnGenerisiPotvrde);
+            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblProsjekStudenata);
             this.Controls.Add(this.lblBrojStudenata);
             this.Controls.Add(this.cmbAktivnost);
@@ -241,5 +264,7 @@
         private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.Label lblProsjekStudenata;
         private System.Windows.Forms.Label lblBrojStudenata;
+        private System.Windows.Forms.Button btnPrint;
+        private System.Windows.Forms.Button btnGenerisiPotvrde;
     }
 }

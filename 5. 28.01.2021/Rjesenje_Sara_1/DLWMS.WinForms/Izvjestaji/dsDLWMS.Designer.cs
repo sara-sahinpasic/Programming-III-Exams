@@ -24,7 +24,7 @@ namespace DLWMS.WinForms.Izvjestaji {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class dsDLWMS : global::System.Data.DataSet {
         
-        private PolozeniDataTable tablePolozeni;
+        private StudentiDataTable tableStudenti;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -54,8 +54,8 @@ namespace DLWMS.WinForms.Izvjestaji {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Polozeni"] != null)) {
-                    base.Tables.Add(new PolozeniDataTable(ds.Tables["Polozeni"]));
+                if ((ds.Tables["Studenti"] != null)) {
+                    base.Tables.Add(new StudentiDataTable(ds.Tables["Studenti"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace DLWMS.WinForms.Izvjestaji {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PolozeniDataTable Polozeni {
+        public StudentiDataTable Studenti {
             get {
-                return this.tablePolozeni;
+                return this.tableStudenti;
             }
         }
         
@@ -152,8 +152,8 @@ namespace DLWMS.WinForms.Izvjestaji {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Polozeni"] != null)) {
-                    base.Tables.Add(new PolozeniDataTable(ds.Tables["Polozeni"]));
+                if ((ds.Tables["Studenti"] != null)) {
+                    base.Tables.Add(new StudentiDataTable(ds.Tables["Studenti"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace DLWMS.WinForms.Izvjestaji {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePolozeni = ((PolozeniDataTable)(base.Tables["Polozeni"]));
+            this.tableStudenti = ((StudentiDataTable)(base.Tables["Studenti"]));
             if ((initTable == true)) {
-                if ((this.tablePolozeni != null)) {
-                    this.tablePolozeni.InitVars();
+                if ((this.tableStudenti != null)) {
+                    this.tableStudenti.InitVars();
                 }
             }
         }
@@ -204,13 +204,13 @@ namespace DLWMS.WinForms.Izvjestaji {
             this.Namespace = "http://tempuri.org/dsDLWMS.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePolozeni = new PolozeniDataTable();
-            base.Tables.Add(this.tablePolozeni);
+            this.tableStudenti = new StudentiDataTable();
+            base.Tables.Add(this.tableStudenti);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePolozeni() {
+        private bool ShouldSerializeStudenti() {
             return false;
         }
         
@@ -270,27 +270,33 @@ namespace DLWMS.WinForms.Izvjestaji {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PolozeniRowChangeEventHandler(object sender, PolozeniRowChangeEvent e);
+        public delegate void StudentiRowChangeEventHandler(object sender, StudentiRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PolozeniDataTable : global::System.Data.TypedTableBase<PolozeniRow> {
+        public partial class StudentiDataTable : global::System.Data.TypedTableBase<StudentiRow> {
             
-            private global::System.Data.DataColumn columnId;
+            private global::System.Data.DataColumn columnRB;
             
-            private global::System.Data.DataColumn columnNaziv;
+            private global::System.Data.DataColumn columnIndeks;
             
-            private global::System.Data.DataColumn columnOcjena;
+            private global::System.Data.DataColumn columnIme;
             
-            private global::System.Data.DataColumn columnDatum;
+            private global::System.Data.DataColumn columnPrezime;
+            
+            private global::System.Data.DataColumn columnSpol;
+            
+            private global::System.Data.DataColumn columnGodina;
+            
+            private global::System.Data.DataColumn columnAktivan;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniDataTable() {
-                this.TableName = "Polozeni";
+            public StudentiDataTable() {
+                this.TableName = "Studenti";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -298,7 +304,7 @@ namespace DLWMS.WinForms.Izvjestaji {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PolozeniDataTable(global::System.Data.DataTable table) {
+            internal StudentiDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -315,40 +321,64 @@ namespace DLWMS.WinForms.Izvjestaji {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PolozeniDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected StudentiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn IdColumn {
+            public global::System.Data.DataColumn RBColumn {
                 get {
-                    return this.columnId;
+                    return this.columnRB;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn NazivColumn {
+            public global::System.Data.DataColumn IndeksColumn {
                 get {
-                    return this.columnNaziv;
+                    return this.columnIndeks;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn OcjenaColumn {
+            public global::System.Data.DataColumn ImeColumn {
                 get {
-                    return this.columnOcjena;
+                    return this.columnIme;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DatumColumn {
+            public global::System.Data.DataColumn PrezimeColumn {
                 get {
-                    return this.columnDatum;
+                    return this.columnPrezime;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SpolColumn {
+                get {
+                    return this.columnSpol;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn GodinaColumn {
+                get {
+                    return this.columnGodina;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AktivanColumn {
+                get {
+                    return this.columnAktivan;
                 }
             }
             
@@ -363,48 +393,51 @@ namespace DLWMS.WinForms.Izvjestaji {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniRow this[int index] {
+            public StudentiRow this[int index] {
                 get {
-                    return ((PolozeniRow)(this.Rows[index]));
+                    return ((StudentiRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PolozeniRowChangeEventHandler PolozeniRowChanging;
+            public event StudentiRowChangeEventHandler StudentiRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PolozeniRowChangeEventHandler PolozeniRowChanged;
+            public event StudentiRowChangeEventHandler StudentiRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PolozeniRowChangeEventHandler PolozeniRowDeleting;
+            public event StudentiRowChangeEventHandler StudentiRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PolozeniRowChangeEventHandler PolozeniRowDeleted;
+            public event StudentiRowChangeEventHandler StudentiRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPolozeniRow(PolozeniRow row) {
+            public void AddStudentiRow(StudentiRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniRow AddPolozeniRow(int Id, string Naziv, int Ocjena, string Datum) {
-                PolozeniRow rowPolozeniRow = ((PolozeniRow)(this.NewRow()));
+            public StudentiRow AddStudentiRow(string RB, string Indeks, string Ime, string Prezime, string Spol, string Godina, string Aktivan) {
+                StudentiRow rowStudentiRow = ((StudentiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id,
-                        Naziv,
-                        Ocjena,
-                        Datum};
-                rowPolozeniRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPolozeniRow);
-                return rowPolozeniRow;
+                        RB,
+                        Indeks,
+                        Ime,
+                        Prezime,
+                        Spol,
+                        Godina,
+                        Aktivan};
+                rowStudentiRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowStudentiRow);
+                return rowStudentiRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PolozeniDataTable cln = ((PolozeniDataTable)(base.Clone()));
+                StudentiDataTable cln = ((StudentiDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -412,55 +445,64 @@ namespace DLWMS.WinForms.Izvjestaji {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PolozeniDataTable();
+                return new StudentiDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnId = base.Columns["Id"];
-                this.columnNaziv = base.Columns["Naziv"];
-                this.columnOcjena = base.Columns["Ocjena"];
-                this.columnDatum = base.Columns["Datum"];
+                this.columnRB = base.Columns["RB"];
+                this.columnIndeks = base.Columns["Indeks"];
+                this.columnIme = base.Columns["Ime"];
+                this.columnPrezime = base.Columns["Prezime"];
+                this.columnSpol = base.Columns["Spol"];
+                this.columnGodina = base.Columns["Godina"];
+                this.columnAktivan = base.Columns["Aktivan"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnId = new global::System.Data.DataColumn("Id", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId);
-                this.columnNaziv = new global::System.Data.DataColumn("Naziv", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNaziv);
-                this.columnOcjena = new global::System.Data.DataColumn("Ocjena", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnOcjena);
-                this.columnDatum = new global::System.Data.DataColumn("Datum", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDatum);
+                this.columnRB = new global::System.Data.DataColumn("RB", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRB);
+                this.columnIndeks = new global::System.Data.DataColumn("Indeks", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIndeks);
+                this.columnIme = new global::System.Data.DataColumn("Ime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIme);
+                this.columnPrezime = new global::System.Data.DataColumn("Prezime", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrezime);
+                this.columnSpol = new global::System.Data.DataColumn("Spol", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpol);
+                this.columnGodina = new global::System.Data.DataColumn("Godina", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGodina);
+                this.columnAktivan = new global::System.Data.DataColumn("Aktivan", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAktivan);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniRow NewPolozeniRow() {
-                return ((PolozeniRow)(this.NewRow()));
+            public StudentiRow NewStudentiRow() {
+                return ((StudentiRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PolozeniRow(builder);
+                return new StudentiRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PolozeniRow);
+                return typeof(StudentiRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PolozeniRowChanged != null)) {
-                    this.PolozeniRowChanged(this, new PolozeniRowChangeEvent(((PolozeniRow)(e.Row)), e.Action));
+                if ((this.StudentiRowChanged != null)) {
+                    this.StudentiRowChanged(this, new StudentiRowChangeEvent(((StudentiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -468,8 +510,8 @@ namespace DLWMS.WinForms.Izvjestaji {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PolozeniRowChanging != null)) {
-                    this.PolozeniRowChanging(this, new PolozeniRowChangeEvent(((PolozeniRow)(e.Row)), e.Action));
+                if ((this.StudentiRowChanging != null)) {
+                    this.StudentiRowChanging(this, new StudentiRowChangeEvent(((StudentiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -477,8 +519,8 @@ namespace DLWMS.WinForms.Izvjestaji {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PolozeniRowDeleted != null)) {
-                    this.PolozeniRowDeleted(this, new PolozeniRowChangeEvent(((PolozeniRow)(e.Row)), e.Action));
+                if ((this.StudentiRowDeleted != null)) {
+                    this.StudentiRowDeleted(this, new StudentiRowChangeEvent(((StudentiRow)(e.Row)), e.Action));
                 }
             }
             
@@ -486,14 +528,14 @@ namespace DLWMS.WinForms.Izvjestaji {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PolozeniRowDeleting != null)) {
-                    this.PolozeniRowDeleting(this, new PolozeniRowChangeEvent(((PolozeniRow)(e.Row)), e.Action));
+                if ((this.StudentiRowDeleting != null)) {
+                    this.StudentiRowDeleting(this, new StudentiRowChangeEvent(((StudentiRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePolozeniRow(PolozeniRow row) {
+            public void RemoveStudentiRow(StudentiRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -520,7 +562,7 @@ namespace DLWMS.WinForms.Izvjestaji {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PolozeniDataTable";
+                attribute2.FixedValue = "StudentiDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -564,127 +606,211 @@ namespace DLWMS.WinForms.Izvjestaji {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PolozeniRow : global::System.Data.DataRow {
+        public partial class StudentiRow : global::System.Data.DataRow {
             
-            private PolozeniDataTable tablePolozeni;
+            private StudentiDataTable tableStudenti;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PolozeniRow(global::System.Data.DataRowBuilder rb) : 
+            internal StudentiRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePolozeni = ((PolozeniDataTable)(this.Table));
+                this.tableStudenti = ((StudentiDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Id {
+            public string RB {
                 get {
                     try {
-                        return ((int)(this[this.tablePolozeni.IdColumn]));
+                        return ((string)(this[this.tableStudenti.RBColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Id\' in table \'Polozeni\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'RB\' in table \'Studenti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolozeni.IdColumn] = value;
+                    this[this.tableStudenti.RBColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Naziv {
+            public string Indeks {
                 get {
                     try {
-                        return ((string)(this[this.tablePolozeni.NazivColumn]));
+                        return ((string)(this[this.tableStudenti.IndeksColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Naziv\' in table \'Polozeni\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Indeks\' in table \'Studenti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolozeni.NazivColumn] = value;
+                    this[this.tableStudenti.IndeksColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Ocjena {
+            public string Ime {
                 get {
                     try {
-                        return ((int)(this[this.tablePolozeni.OcjenaColumn]));
+                        return ((string)(this[this.tableStudenti.ImeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ocjena\' in table \'Polozeni\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Ime\' in table \'Studenti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolozeni.OcjenaColumn] = value;
+                    this[this.tableStudenti.ImeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Datum {
+            public string Prezime {
                 get {
                     try {
-                        return ((string)(this[this.tablePolozeni.DatumColumn]));
+                        return ((string)(this[this.tableStudenti.PrezimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Datum\' in table \'Polozeni\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Prezime\' in table \'Studenti\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePolozeni.DatumColumn] = value;
+                    this[this.tableStudenti.PrezimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsIdNull() {
-                return this.IsNull(this.tablePolozeni.IdColumn);
+            public string Spol {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudenti.SpolColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Spol\' in table \'Studenti\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudenti.SpolColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetIdNull() {
-                this[this.tablePolozeni.IdColumn] = global::System.Convert.DBNull;
+            public string Godina {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudenti.GodinaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Godina\' in table \'Studenti\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudenti.GodinaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsNazivNull() {
-                return this.IsNull(this.tablePolozeni.NazivColumn);
+            public string Aktivan {
+                get {
+                    try {
+                        return ((string)(this[this.tableStudenti.AktivanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Aktivan\' in table \'Studenti\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableStudenti.AktivanColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetNazivNull() {
-                this[this.tablePolozeni.NazivColumn] = global::System.Convert.DBNull;
+            public bool IsRBNull() {
+                return this.IsNull(this.tableStudenti.RBColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsOcjenaNull() {
-                return this.IsNull(this.tablePolozeni.OcjenaColumn);
+            public void SetRBNull() {
+                this[this.tableStudenti.RBColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetOcjenaNull() {
-                this[this.tablePolozeni.OcjenaColumn] = global::System.Convert.DBNull;
+            public bool IsIndeksNull() {
+                return this.IsNull(this.tableStudenti.IndeksColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDatumNull() {
-                return this.IsNull(this.tablePolozeni.DatumColumn);
+            public void SetIndeksNull() {
+                this[this.tableStudenti.IndeksColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDatumNull() {
-                this[this.tablePolozeni.DatumColumn] = global::System.Convert.DBNull;
+            public bool IsImeNull() {
+                return this.IsNull(this.tableStudenti.ImeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetImeNull() {
+                this[this.tableStudenti.ImeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPrezimeNull() {
+                return this.IsNull(this.tableStudenti.PrezimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPrezimeNull() {
+                this[this.tableStudenti.PrezimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSpolNull() {
+                return this.IsNull(this.tableStudenti.SpolColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSpolNull() {
+                this[this.tableStudenti.SpolColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsGodinaNull() {
+                return this.IsNull(this.tableStudenti.GodinaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetGodinaNull() {
+                this[this.tableStudenti.GodinaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAktivanNull() {
+                return this.IsNull(this.tableStudenti.AktivanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAktivanNull() {
+                this[this.tableStudenti.AktivanColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -692,22 +818,22 @@ namespace DLWMS.WinForms.Izvjestaji {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PolozeniRowChangeEvent : global::System.EventArgs {
+        public class StudentiRowChangeEvent : global::System.EventArgs {
             
-            private PolozeniRow eventRow;
+            private StudentiRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniRowChangeEvent(PolozeniRow row, global::System.Data.DataRowAction action) {
+            public StudentiRowChangeEvent(StudentiRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PolozeniRow Row {
+            public StudentiRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -1,5 +1,8 @@
 ﻿using DLWMS.WinForms.Entiteti;
 using DLWMS.WinForms.Helpers;
+using DLWMS.WinForms.IspitIB140261;
+using DLWMS.WinForms.IspitIB140261.Forms;
+using DLWMS.WinForms.IspitIB140261.Report;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -47,7 +50,6 @@ namespace DLWMS.WinForms.Forme
 
         private void UcitajCMB()
         {
-
             cmbGodineStudija.DataSource = godineStudija;
             cmbAktivnost.ValueMember = "Vrijednost";
             cmbAktivnost.DisplayMember = "Opis";
@@ -86,7 +88,6 @@ namespace DLWMS.WinForms.Forme
         private void txtPretraga_TextChanged(object sender, EventArgs e)
         {
             Pretraga();
-
         }
 
         private void IzracunajProsjek(List<Student> studenti) //izračunati prosjek
@@ -175,13 +176,26 @@ namespace DLWMS.WinForms.Forme
             }
             IzracunajProsjek(pretraga);
             lblBrojStudenata.Text = $"Broj studenata: {pretraga.Count.ToString()}";
-
             UcitajPodatkeOStudentima(pretraga);
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void btnPrint_Click(object sender, EventArgs e)
         {
+            var studenti = dgvStudenti.DataSource as List<Student>;
+            //if (studenti?.Count > 0)
+            //{
+            //    frmReportIB140261 frmReportIB140261 = new frmReportIB140261(studenti);
+            //    frmReportIB140261.ShowDialog();
+            //}
 
+            hshshs hshshs = new hshshs(studenti);
+            hshshs.ShowDialog();
+        }
+
+        private void btnGenerisiPotvrde_Click(object sender, EventArgs e)
+        {
+            frmPotvrdeIB140261 frmPotvrdeIB140261 = new frmPotvrdeIB140261();
+            frmPotvrdeIB140261.ShowDialog();
         }
 
 
