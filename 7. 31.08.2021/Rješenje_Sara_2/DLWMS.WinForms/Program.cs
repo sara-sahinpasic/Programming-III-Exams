@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLWMS.WinForms.IspitIB140261;
+using System;
 using System.Windows.Forms;
 
 namespace DLWMS.WinForms
@@ -13,7 +14,7 @@ namespace DLWMS.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form forma = new frmGlavna();
+            Form forma = new frmPretragaIB140261();
             Application.Run(forma);
         }
     }

@@ -20,11 +20,15 @@ namespace DLWMS.WinForms.Entiteti
         public int GodinaStudija { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
+        public string ImePrezime => $"{Ime} {Prezime}";
         public DateTime DatumRodjenja { get; set; }     
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
         public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
         public virtual ICollection<Uloga> Uloge { get; set; }
+
+        
+
         public Student()
         {
             PolozeniPredmeti = new List<PolozeniPredmet>();
