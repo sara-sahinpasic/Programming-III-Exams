@@ -97,6 +97,38 @@
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Helpers\Poruke.cs" />
     <Compile Include="DB\Student.cs" />
+    <Compile Include="IB140261\Forms\frmIzvjestajIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmIzvjestajIB140261.Designer.cs">
+      <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmPretragaIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmPretragaIB140261.Designer.cs">
+      <DependentUpon>frmPretragaIB140261.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmStudentSeminarskiIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmStudentSeminarskiIB140261.Designer.cs">
+      <DependentUpon>frmStudentSeminarskiIB140261.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmTeorijaIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmTeorijaIB140261.Designer.cs">
+      <DependentUpon>frmTeorijaIB140261.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Class\Predmeti.cs" />
+    <Compile Include="IB140261\Class\PredmetiSeminarksi.cs" />
+    <Compile Include="IB140261\Reports\dsDLWMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Class\StudentiPredmeti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\frmIzvjestaj.cs">
@@ -108,6 +140,19 @@
     <EmbeddedResource Include="frmGlavna.resx">
       <DependentUpon>frmGlavna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmIzvjestajIB140261.resx">
+      <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmPretragaIB140261.resx">
+      <DependentUpon>frmPretragaIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmStudentSeminarskiIB140261.resx">
+      <DependentUpon>frmStudentSeminarskiIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmTeorijaIB140261.resx">
+      <DependentUpon>frmTeorijaIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Reports\rptIzvjestaj.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -124,6 +169,17 @@
     <EmbeddedResource Include="Reports\rptPotvrda.rdlc" />
     <None Include="DLWMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="IB140261\Reports\dsDLWMS.xsc">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </None>
+    <None Include="IB140261\Reports\dsDLWMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDLWMS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IB140261\Reports\dsDLWMS.xss">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

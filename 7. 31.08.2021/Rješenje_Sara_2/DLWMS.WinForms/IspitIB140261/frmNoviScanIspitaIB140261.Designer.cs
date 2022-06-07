@@ -61,6 +61,7 @@ namespace DLWMS.WinForms.IspitIB140261
             this.cmbPredmet.Name = "cmbPredmet";
             this.cmbPredmet.Size = new System.Drawing.Size(262, 21);
             this.cmbPredmet.TabIndex = 1;
+            this.cmbPredmet.SelectedIndexChanged += new System.EventHandler(this.cmbPredmet_SelectedIndexChanged);
             // 
             // label2
             // 

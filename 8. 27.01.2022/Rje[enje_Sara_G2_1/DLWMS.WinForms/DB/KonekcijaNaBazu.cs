@@ -1,4 +1,5 @@
 ﻿
+using DLWMS.WinForms.IB140261;
 using System.Data.Entity;
 
 namespace DLWMS.WinForms.DB
@@ -15,9 +16,13 @@ namespace DLWMS.WinForms.DB
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Student>().ToTable("Studenti");                      
-        }       
+            modelBuilder.Entity<Student>().ToTable("Studenti");
+        }
         public DbSet<Student> Studenti { get; set; }
-       
+        public DbSet<Predmeti> Predmeti { get; set; }
+        public DbSet<StudentiPredmeti> StudentiPredmeti { get; set; }
+        public DbSet<PredmetiSeminarksi> PredmetiSeminarksi { get; set; }
+
+
     }
 }

@@ -97,24 +97,17 @@ namespace DLWMS.WinForms.IB140261
             Action action = () => UcitajDGV();
             await Task.Run(() =>
             {
-
-
-                Random randomStudent = new Random();
-                int indexStudent = randomStudent.Next(1, _baza.Studenti.Count() - 1);
-
-                Random randomRezultat = new Random();
-                Random randomNalaz = new Random();
-
+                Random random = new Random();
 
                 for (int i = 0; i < unosBroja; i++)
-
                 {
                     StudentiCovidTestoviIB140261 noviZapis = new StudentiCovidTestoviIB140261()
                     {
-                        Student = _baza.Studenti.ToList().ElementAt(indexStudent),
+                        Student = _baza.Studenti.ToList().ElementAt(random.Next(1, _baza.Studenti.Count()-1)),
                         Datum = DateTime.Now,
-                        Rezultat = randomRezultat.NextDouble() > 0.5 ? "Negativan" : "Pozitivan",
-                        NalazDostavljen = randomNalaz.NextDouble() > 0.5
+                        Rezultat = random.NextDouble() > 0.5 ? "Negativan" : "Pozitivan",
+
+                        NalazDostavljen = random.NextDouble() > 0.5
                     };
                     _baza.StudentiCovidTestovi.Add(noviZapis);
                 }

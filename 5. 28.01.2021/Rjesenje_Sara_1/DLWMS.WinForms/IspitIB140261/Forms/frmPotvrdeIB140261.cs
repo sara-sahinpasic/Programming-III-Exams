@@ -54,10 +54,11 @@ namespace DLWMS.WinForms.IspitIB140261.Forms
 
                 for (int i = 0; i < brojPotvrda; i++)
                 {
-                    noviZapis.Student = _baza.Studenti.ToList().ElementAt(toSkip);
+                    noviZapis.Student = _baza.Studenti.ToList().ElementAt(random.Next(1, _baza.Studenti.Count()-1));
                     noviZapis.Datum = DateTime.Now.ToString();
                     noviZapis.Svrha = $"Regulisanje statusa_{i + 1}";
                     noviZapis.Izdata = random.NextDouble() > 0.5;
+
                     _baza.StudentiPotvrde.Add(noviZapis);
                     _baza.SaveChanges();
                 }

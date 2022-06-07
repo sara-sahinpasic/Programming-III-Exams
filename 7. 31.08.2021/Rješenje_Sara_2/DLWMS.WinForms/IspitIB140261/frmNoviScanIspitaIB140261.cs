@@ -33,7 +33,7 @@ namespace DLWMS.WinForms.IspitIB140261
 
         private bool ValidirajUnos()
         {
-            return Validator.ValidirajKontrolu(cmbPredmet, err, Poruke.ObaveznaVrijednost) &&
+            return //Validator.ValidirajKontrolu(cmbPredmet, err, Poruke.ObaveznaVrijednost) &&
                   Validator.ValidirajKontrolu(txtNapomena, err, Poruke.ObaveznaVrijednost) &&
                    Validator.ValidirajKontrolu(pbSlika, err, Poruke.ObaveznaVrijednost);
         }
@@ -79,6 +79,11 @@ namespace DLWMS.WinForms.IspitIB140261
             {
                 MessageBox.Show($"{ex.Message}{Environment.NewLine}{ex.InnerException?.Message}");
             }
+
+        }
+
+        private void cmbPredmet_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
