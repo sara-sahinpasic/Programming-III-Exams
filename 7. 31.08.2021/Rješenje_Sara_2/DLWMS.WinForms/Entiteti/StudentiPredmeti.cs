@@ -1,6 +1,7 @@
 ﻿using DLWMS.WinForms.Helpers;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace DLWMS.WinForms.Entiteti
 {
@@ -12,6 +13,8 @@ namespace DLWMS.WinForms.Entiteti
         public virtual Student Student { get; set; }
         public int Ocjena { get; set; }
         public DateTime Datum { get; set; }
+
       
+
     }
 }

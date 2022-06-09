@@ -72,10 +72,10 @@ namespace DLWMS.WinForms.Forme
         {
             //TODO: Korigovati na nacin da se podaci preuzimaju iz baze
             //TODO: Neke od podataka iskazati u procentima
-            var brojZapisa = student.PolozeniPredmeti.Count;
+            var brojZapisa = student.StudentiPredmeti.Count;
             lblBrojZapisa.Text = $"Broj zapisa {brojZapisa}";
             if (brojZapisa > 0)
-                lblProsjek.Text = $"Prosjecna ocjena {student.PolozeniPredmeti.Average(x => x.Ocjena)}";
+                lblProsjek.Text = $"Prosjecna ocjena {student.StudentiPredmeti.Average(x => x.Ocjena)}";
         }
 
         private bool ValidanUnos()
@@ -94,7 +94,7 @@ namespace DLWMS.WinForms.Forme
         private void OnemoguciDodavanje()
         {
             var odabraniPredmet = cmbPredmeti.SelectedItem as Predmet;
-            var postoji = student.PolozeniPredmeti.Where(polozeni => polozeni.Predmet.Id == odabraniPredmet.Id).Count() > 0;
+            var postoji = student.StudentiPredmeti.Where(polozeni => polozeni.Predmet.Id == odabraniPredmet.Id).Count() > 0;
             btnDodajPolozeni.Enabled = !postoji;
         }
 

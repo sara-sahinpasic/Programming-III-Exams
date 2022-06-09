@@ -93,10 +93,42 @@
     <Compile Include="frmGlavna.Designer.cs">
       <DependentUpon>frmGlavna.cs</DependentUpon>
     </Compile>
+    <Compile Include="IB140261\Forms\frmIzvjestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmIzvjestaj.Designer.cs">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmKonsultacije.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmKonsultacije.Designer.cs">
+      <DependentUpon>frmKonsultacije.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmNovaKonsultacija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmNovaKonsultacija.Designer.cs">
+      <DependentUpon>frmNovaKonsultacija.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmPretraga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IB140261\Forms\frmPretraga.Designer.cs">
+      <DependentUpon>frmPretraga.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\ImageHelper.cs" />
     <Compile Include="Helpers\Validator.cs" />
     <Compile Include="Helpers\Poruke.cs" />
     <Compile Include="DB\Student.cs" />
+    <Compile Include="IB140261\Class\Predmeti.cs" />
+    <Compile Include="IB140261\Report\dsDLWMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IB140261\Class\StudentiKonsultacije.cs" />
+    <Compile Include="IB140261\Class\StudentiPredmeti.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports\frmIzvjestaj.cs">
@@ -105,10 +137,22 @@
     <Compile Include="Reports\frmIzvjestaj.Designer.cs">
       <DependentUpon>frmIzvjestaj.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmGlavna.resx">
       <DependentUpon>frmGlavna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmIzvjestaj.resx">
+      <DependentUpon>frmIzvjestaj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmKonsultacije.resx">
+      <DependentUpon>frmKonsultacije.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmNovaKonsultacija.resx">
+      <DependentUpon>frmNovaKonsultacija.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Forms\frmPretraga.resx">
+      <DependentUpon>frmPretraga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IB140261\Report\rptIzvjestaj.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -126,6 +170,17 @@
     <None Include="DLWMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="IB140261\Report\dsDLWMS.xsc">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </None>
+    <None Include="IB140261\Report\dsDLWMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDLWMS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IB140261\Report\dsDLWMS.xss">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,21 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fit_logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

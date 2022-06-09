@@ -96,6 +96,7 @@
     <Compile Include="Helpers\DLWMSdb.cs" />
     <Compile Include="Entiteti\StudentiPredmeti.cs" />
     <Compile Include="Entiteti\Uloge.cs" />
+    <Compile Include="IspitIB140261\dtoStudent.cs" />
     <Compile Include="IspitIB140261\dtoStudentPolozeni.cs" />
     <Compile Include="IspitIB140261\frmIzvjestajIB140261.cs">
       <SubType>Form</SubType>

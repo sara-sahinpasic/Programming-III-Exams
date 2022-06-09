@@ -32,11 +32,6 @@ namespace DLWMS.WinForms.IspitIB140261
             this.label1 = new System.Windows.Forms.Label();
             this.txtImePrezime = new System.Windows.Forms.TextBox();
             this.dgvPretraga = new System.Windows.Forms.DataGridView();
-            this.ImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PolozeniPredmeti = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrojPolozenih = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prosjek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ispiti = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblStudent = new System.Windows.Forms.Label();
@@ -52,6 +47,11 @@ namespace DLWMS.WinForms.IspitIB140261
             this.label5 = new System.Windows.Forms.Label();
             this.txtSadrzaj = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.ImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PolozeniPredmeti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BrojPolozenih = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prosjek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ispiti = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPretraga)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -88,47 +88,6 @@ namespace DLWMS.WinForms.IspitIB140261
             this.dgvPretraga.Size = new System.Drawing.Size(773, 236);
             this.dgvPretraga.TabIndex = 2;
             this.dgvPretraga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPretraga_CellContentClick);
-            // 
-            // ImePrezime
-            // 
-            this.ImePrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ImePrezime.DataPropertyName = "Student";
-            this.ImePrezime.FillWeight = 128.4916F;
-            this.ImePrezime.HeaderText = "Ime i prezime";
-            this.ImePrezime.Name = "ImePrezime";
-            // 
-            // PolozeniPredmeti
-            // 
-            this.PolozeniPredmeti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.PolozeniPredmeti.DataPropertyName = "Predmet";
-            this.PolozeniPredmeti.FillWeight = 129.0126F;
-            this.PolozeniPredmeti.HeaderText = "Polozeni predmeti";
-            this.PolozeniPredmeti.Name = "PolozeniPredmeti";
-            // 
-            // BrojPolozenih
-            // 
-            this.BrojPolozenih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.BrojPolozenih.DataPropertyName = "BrojPolozenih";
-            this.BrojPolozenih.FillWeight = 73.59167F;
-            this.BrojPolozenih.HeaderText = "Broj položenih";
-            this.BrojPolozenih.Name = "BrojPolozenih";
-            // 
-            // Prosjek
-            // 
-            this.Prosjek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prosjek.DataPropertyName = "Prosjek";
-            this.Prosjek.FillWeight = 67.38124F;
-            this.Prosjek.HeaderText = "Prosjek";
-            this.Prosjek.Name = "Prosjek";
-            // 
-            // Ispiti
-            // 
-            this.Ispiti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ispiti.FillWeight = 101.5228F;
-            this.Ispiti.HeaderText = "";
-            this.Ispiti.Name = "Ispiti";
-            this.Ispiti.Text = "Ispiti";
-            this.Ispiti.UseColumnTextForButtonValue = true;
             // 
             // label2
             // 
@@ -263,6 +222,47 @@ namespace DLWMS.WinForms.IspitIB140261
             this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Unesite sadržaj:";
+            // 
+            // ImePrezime
+            // 
+            this.ImePrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ImePrezime.DataPropertyName = "ImePrezime";
+            this.ImePrezime.FillWeight = 128.4916F;
+            this.ImePrezime.HeaderText = "Ime i prezime";
+            this.ImePrezime.Name = "ImePrezime";
+            // 
+            // PolozeniPredmeti
+            // 
+            this.PolozeniPredmeti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PolozeniPredmeti.DataPropertyName = "PolozeniPredmeti";
+            this.PolozeniPredmeti.FillWeight = 129.0126F;
+            this.PolozeniPredmeti.HeaderText = "Polozeni predmeti";
+            this.PolozeniPredmeti.Name = "PolozeniPredmeti";
+            // 
+            // BrojPolozenih
+            // 
+            this.BrojPolozenih.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.BrojPolozenih.DataPropertyName = "BrojPolozenih";
+            this.BrojPolozenih.FillWeight = 73.59167F;
+            this.BrojPolozenih.HeaderText = "Broj položenih";
+            this.BrojPolozenih.Name = "BrojPolozenih";
+            // 
+            // Prosjek
+            // 
+            this.Prosjek.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prosjek.DataPropertyName = "ProsjecnaOcjena";
+            this.Prosjek.FillWeight = 67.38124F;
+            this.Prosjek.HeaderText = "Prosjek";
+            this.Prosjek.Name = "Prosjek";
+            // 
+            // Ispiti
+            // 
+            this.Ispiti.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ispiti.FillWeight = 101.5228F;
+            this.Ispiti.HeaderText = "";
+            this.Ispiti.Name = "Ispiti";
+            this.Ispiti.Text = "Ispiti";
+            this.Ispiti.UseColumnTextForButtonValue = true;
             // 
             // frmPretragaIB140261
             // 

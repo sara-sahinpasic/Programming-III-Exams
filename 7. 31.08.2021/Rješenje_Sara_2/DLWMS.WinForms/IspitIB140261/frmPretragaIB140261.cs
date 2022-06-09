@@ -34,12 +34,43 @@ namespace DLWMS.WinForms.IspitIB140261
             LoadData();
         }
 
-        private void LoadData(List<StudentiPredmeti> studentiPredmeti = null)
+        private void LoadData(List<Student> student = null)
         {
             try
             {
                 dgvPretraga.DataSource = null;
-                dgvPretraga.DataSource = studentiPredmeti ?? _baza.StudentiPredmeti.ToList();
+                dgvPretraga.DataSource = student ?? _baza.Studenti.Where(x => x.StudentiPredmeti.Any()).ToList();
+                /*Where(x => x.StudentiPredmeti.Any())*/
+                //var predmeti = _baza.StudentiPredmeti.ToList();
+                //List<dtoStudent> dtoStudenti = new List<dtoStudent>();
+
+                //for (int i = 0; i < studenti.Count; i++)
+                //{
+                //    var dtoStudenta = new dtoStudent();
+                //    var prosjek = 0.0;
+                //    var brojPredmeta = 0;
+                //    var nazivPredmeta = "";
+                //    for (int j = 0; j < predmeti.Count; j++)
+                //    {
+                //        if (predmeti[j].Student.Id == studenti[i].Id)
+                //        {
+                //            prosjek += predmeti[j].Ocjena;
+                //            brojPredmeta++;
+                //            nazivPredmeta += $"{predmeti[i].Predmet.Naziv}; ";
+                //        }
+                //    }
+                //    if (brojPredmeta <= 0)
+                //        continue;
+                //    dtoStudenta.ImePrezime = $"{studenti[i].Ime}";
+
+                //    dtoStudenta.Prosjek = Math.Round(prosjek / brojPredmeta, 2);
+                //    dtoStudenta.Predmeti = nazivPredmeta;
+                //    dtoStudenta.BrojPolozenih = brojPredmeta;
+                //    dtoStudenti.Add(dtoStudenta);
+                //}
+                //dgvPretraga.DataSource = dtoStudenti;
+
+                //Console.WriteLine("sdfsd");
             }
             catch (Exception ex)
             {
@@ -60,8 +91,8 @@ namespace DLWMS.WinForms.IspitIB140261
                 LoadData();
                 return;
             }
-            var pretraga = _baza.StudentiPredmeti.Where(x => x.Student.Ime.ToLower().Trim().Contains(filter)
-            || x.Student.Prezime.ToLower().Trim().Contains(filter)).ToList();
+            var pretraga = _baza.Studenti.Where(x => x.Ime.ToLower().Trim().Contains(filter)
+            || x.Prezime.ToLower().Trim().Contains(filter)).ToList();
 
             //if (pretraga == null)
             //{

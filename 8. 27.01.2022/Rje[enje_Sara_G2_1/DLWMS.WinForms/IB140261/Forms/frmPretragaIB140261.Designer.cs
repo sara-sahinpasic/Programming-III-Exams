@@ -33,12 +33,6 @@ namespace DLWMS.WinForms.IB140261
             this.cmbOcjene = new System.Windows.Forms.ComboBox();
             this.btnPretraga = new System.Windows.Forms.Button();
             this.dgvPretraga = new System.Windows.Forms.DataGridView();
-            this.Rb = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DatumPolaganja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Seminarski = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.txtInfo = new System.Windows.Forms.TextBox();
@@ -49,6 +43,12 @@ namespace DLWMS.WinForms.IB140261
             this.label2 = new System.Windows.Forms.Label();
             this.btnPrintaj = new System.Windows.Forms.Button();
             this.btnTeorija = new System.Windows.Forms.Button();
+            this.Rb = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImePrezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DatumPolaganja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Seminarski = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPretraga)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -96,54 +96,6 @@ namespace DLWMS.WinForms.IB140261
             this.dgvPretraga.Size = new System.Drawing.Size(776, 150);
             this.dgvPretraga.TabIndex = 3;
             this.dgvPretraga.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPretraga_CellContentClick);
-            // 
-            // Rb
-            // 
-            this.Rb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Rb.FillWeight = 47.4763F;
-            this.Rb.HeaderText = "Rb";
-            this.Rb.Name = "Rb";
-            // 
-            // ImePrezime
-            // 
-            this.ImePrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ImePrezime.DataPropertyName = "Student";
-            this.ImePrezime.FillWeight = 117.5982F;
-            this.ImePrezime.HeaderText = "Ime i prezime";
-            this.ImePrezime.Name = "ImePrezime";
-            // 
-            // Predmet
-            // 
-            this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Predmet.DataPropertyName = "Predmet";
-            this.Predmet.FillWeight = 111.6559F;
-            this.Predmet.HeaderText = "Predmet";
-            this.Predmet.Name = "Predmet";
-            // 
-            // DatumPolaganja
-            // 
-            this.DatumPolaganja.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DatumPolaganja.DataPropertyName = "DatumPolaganja";
-            this.DatumPolaganja.FillWeight = 106.5281F;
-            this.DatumPolaganja.HeaderText = "Datum polaganja";
-            this.DatumPolaganja.Name = "DatumPolaganja";
-            // 
-            // Ocjena
-            // 
-            this.Ocjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Ocjena.DataPropertyName = "Ocjena";
-            this.Ocjena.FillWeight = 110.1426F;
-            this.Ocjena.HeaderText = "Ocjena";
-            this.Ocjena.Name = "Ocjena";
-            // 
-            // Seminarski
-            // 
-            this.Seminarski.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Seminarski.FillWeight = 106.599F;
-            this.Seminarski.HeaderText = "";
-            this.Seminarski.Name = "Seminarski";
-            this.Seminarski.Text = "Seminarski";
-            this.Seminarski.UseColumnTextForButtonValue = true;
             // 
             // groupBox1
             // 
@@ -241,6 +193,55 @@ namespace DLWMS.WinForms.IB140261
             this.btnTeorija.Text = "Teorija";
             this.btnTeorija.UseVisualStyleBackColor = true;
             this.btnTeorija.Click += new System.EventHandler(this.btnTeorija_Click);
+            // 
+            // Rb
+            // 
+            this.Rb.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Rb.DataPropertyName = "Id";
+            this.Rb.FillWeight = 47.4763F;
+            this.Rb.HeaderText = "Rb";
+            this.Rb.Name = "Rb";
+            // 
+            // ImePrezime
+            // 
+            this.ImePrezime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ImePrezime.DataPropertyName = "Student";
+            this.ImePrezime.FillWeight = 117.5982F;
+            this.ImePrezime.HeaderText = "Ime i prezime";
+            this.ImePrezime.Name = "ImePrezime";
+            // 
+            // Predmet
+            // 
+            this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Predmet.DataPropertyName = "Predmet";
+            this.Predmet.FillWeight = 111.6559F;
+            this.Predmet.HeaderText = "Predmet";
+            this.Predmet.Name = "Predmet";
+            // 
+            // DatumPolaganja
+            // 
+            this.DatumPolaganja.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DatumPolaganja.DataPropertyName = "DatumPolaganja";
+            this.DatumPolaganja.FillWeight = 106.5281F;
+            this.DatumPolaganja.HeaderText = "Datum polaganja";
+            this.DatumPolaganja.Name = "DatumPolaganja";
+            // 
+            // Ocjena
+            // 
+            this.Ocjena.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Ocjena.DataPropertyName = "Ocjena";
+            this.Ocjena.FillWeight = 110.1426F;
+            this.Ocjena.HeaderText = "Ocjena";
+            this.Ocjena.Name = "Ocjena";
+            // 
+            // Seminarski
+            // 
+            this.Seminarski.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Seminarski.FillWeight = 106.599F;
+            this.Seminarski.HeaderText = "";
+            this.Seminarski.Name = "Seminarski";
+            this.Seminarski.Text = "Seminarski";
+            this.Seminarski.UseColumnTextForButtonValue = true;
             // 
             // frmPretragaIB140261
             // 
