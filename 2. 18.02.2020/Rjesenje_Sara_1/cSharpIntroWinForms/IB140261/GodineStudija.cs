@@ -8,10 +8,11 @@ using System.Threading.Tasks;
 namespace cSharpIntroWinForms.IB140261
 {
     [Table("GodineStudija")]
-    public class GodineStudijaIB140261
+    public class GodineStudija
     {
         public int Id { get; set; }
         public string Naziv { get; set; }
         public bool Aktivan { get; set; }
+        public override string ToString() => Naziv;
     }
 }

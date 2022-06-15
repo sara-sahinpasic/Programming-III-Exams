@@ -90,11 +90,12 @@ namespace DLWMS.WinForms.IB140261
                         Student = _x,
                         Predmet = odabirPredmeta,
                         VrijemeOdrzavanja = DateTime.Now,
-                        Napomena = txtInfo.Text //prvi prelaz student nema napomenu
+                        Napomena = $"Konsultacije vezane za posaljednji ispit iz {odabirPredmeta.Naziv} na datum {DateTime.Now}" //prvi prelaz student nema napomenu
                     };
                     _baza.StudentiKonsultacije.Add(noviZapis);
 
-                    Action action = () => txtInfo.Text += $"Za {noviZapis.Student.Ime} {noviZapis.Student.Prezime} dodat zahtjev za konsultacijama -> " +
+                    Action action = () => txtInfo.Text/*noviZapis.Napomena*//*napomena*/ += $"Za {noviZapis.Student.Ime} {noviZapis.Student.Prezime} " +
+                    $"dodat zahtjev za konsultacijama -> " +
                     $"{noviZapis.Predmet} ({noviZapis.VrijemeOdrzavanja}) {Environment.NewLine}";
                     BeginInvoke(action);
                 }

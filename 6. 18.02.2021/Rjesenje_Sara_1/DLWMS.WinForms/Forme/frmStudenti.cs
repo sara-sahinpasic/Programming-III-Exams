@@ -67,10 +67,7 @@ namespace DLWMS.WinForms.Forme
 
         private void dtpOD_ValueChanged(object sender, EventArgs e)
         {
-
-
             Pretraga();
-
         }
 
         private void Pretraga()
@@ -105,18 +102,19 @@ namespace DLWMS.WinForms.Forme
         private void IzracunajProsjek(List<Student> pretraga)
         {
             double prosjek = 0;
-
-            for (int i = 0; i < pretraga.Count; i++)
+            if (pretraga.Count > 0)
             {
-                prosjek += pretraga[i].ProsjecnaOcjena;
+                for (int i = 0; i < pretraga.Count; i++)
+                {
+                    prosjek += pretraga[i].ProsjecnaOcjena;
+                }
+
+                prosjek /= pretraga.Count;
             }
 
-            var projekSvihStudenata = prosjek / pretraga.Count;
 
-            if (projekSvihStudenata is double.NaN)
-                lblProsjecnaOcjena.Text = $"Prosječna ocjena: {0}";
-            else
-                lblProsjecnaOcjena.Text = $"Prosječna ocjena: {projekSvihStudenata}";
+
+            lblProsjecnaOcjena.Text = $"Prosječna ocjena: {prosjek}";
         }
 
         private List<StudentiPredmeti> pretragaPoCojeniDatumOperator(List<StudentiPredmeti> pretragaPoDatumu, string filterOperator, int filterOcjena)
@@ -160,6 +158,16 @@ namespace DLWMS.WinForms.Forme
         {
             frmCovidTestIB140261 frmCovidTestIB140261 = new frmCovidTestIB140261();
             frmCovidTestIB140261.Show();
+        }
+
+        private void cmbOcjena_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Pretraga();
+        }
+
+        private void lblUkupnoStudenata_Click(object sender, EventArgs e)
+        {
+
         }
         //private void txtPretraga_TextChanged(object sender, EventArgs e)
         //{

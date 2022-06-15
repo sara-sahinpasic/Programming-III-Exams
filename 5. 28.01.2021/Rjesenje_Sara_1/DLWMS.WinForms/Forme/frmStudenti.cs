@@ -119,7 +119,6 @@ namespace DLWMS.WinForms.Forme
         private void cmbGodineStudija_SelectedIndexChanged(object sender, EventArgs e)
         {
             Pretraga();
-
         }
         private void cmbAktivnot_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -179,6 +178,7 @@ namespace DLWMS.WinForms.Forme
             UcitajPodatkeOStudentima(pretraga);
         }
 
+       
         private void btnPrint_Click(object sender, EventArgs e)
         {
             var studenti = dgvStudenti.DataSource as List<Student>;

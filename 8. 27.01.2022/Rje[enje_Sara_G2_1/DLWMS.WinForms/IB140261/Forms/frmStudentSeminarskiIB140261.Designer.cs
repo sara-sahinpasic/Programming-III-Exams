@@ -43,14 +43,15 @@ namespace DLWMS.WinForms.IB140261
             this.lblDatum = new System.Windows.Forms.Label();
             this.btnNazad = new System.Windows.Forms.Button();
             this.btnNaprijed = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblSlikaOd = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.err = new System.Windows.Forms.ErrorProvider(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.pbPregledSlika = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPregledSlika)).BeginInit();
             this.SuspendLayout();
             // 
             // lblStudent
@@ -128,11 +129,12 @@ namespace DLWMS.WinForms.IB140261
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pbPregledSlika);
             this.groupBox2.Controls.Add(this.txtTekst);
             this.groupBox2.Controls.Add(this.lblDatum);
             this.groupBox2.Controls.Add(this.btnNazad);
             this.groupBox2.Controls.Add(this.btnNaprijed);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lblSlikaOd);
             this.groupBox2.Location = new System.Drawing.Point(12, 275);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(490, 435);
@@ -142,7 +144,7 @@ namespace DLWMS.WinForms.IB140261
             // 
             // txtTekst
             // 
-            this.txtTekst.Location = new System.Drawing.Point(14, 327);
+            this.txtTekst.Location = new System.Drawing.Point(11, 271);
             this.txtTekst.Multiline = true;
             this.txtTekst.Name = "txtTekst";
             this.txtTekst.ReadOnly = true;
@@ -151,7 +153,7 @@ namespace DLWMS.WinForms.IB140261
             // 
             // lblDatum
             // 
-            this.lblDatum.Location = new System.Drawing.Point(109, 297);
+            this.lblDatum.Location = new System.Drawing.Point(105, 241);
             this.lblDatum.Name = "lblDatum";
             this.lblDatum.Size = new System.Drawing.Size(281, 27);
             this.lblDatum.TabIndex = 11;
@@ -159,30 +161,32 @@ namespace DLWMS.WinForms.IB140261
             // 
             // btnNazad
             // 
-            this.btnNazad.Location = new System.Drawing.Point(6, 157);
+            this.btnNazad.Location = new System.Drawing.Point(6, 137);
             this.btnNazad.Name = "btnNazad";
             this.btnNazad.Size = new System.Drawing.Size(75, 23);
             this.btnNazad.TabIndex = 10;
             this.btnNazad.Text = "<==";
             this.btnNazad.UseVisualStyleBackColor = true;
+            this.btnNazad.Click += new System.EventHandler(this.btnNazad_Click);
             // 
             // btnNaprijed
             // 
-            this.btnNaprijed.Location = new System.Drawing.Point(409, 157);
+            this.btnNaprijed.Location = new System.Drawing.Point(408, 137);
             this.btnNaprijed.Name = "btnNaprijed";
             this.btnNaprijed.Size = new System.Drawing.Size(75, 23);
             this.btnNaprijed.TabIndex = 9;
             this.btnNaprijed.Text = "==>";
             this.btnNaprijed.UseVisualStyleBackColor = true;
+            this.btnNaprijed.Click += new System.EventHandler(this.btnNaprijed_Click);
             // 
-            // label3
+            // lblSlikaOd
             // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(104, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(236, 27);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "/";
+            this.lblSlikaOd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSlikaOd.Location = new System.Drawing.Point(127, 16);
+            this.lblSlikaOd.Name = "lblSlikaOd";
+            this.lblSlikaOd.Size = new System.Drawing.Size(236, 27);
+            this.lblSlikaOd.TabIndex = 9;
+            this.lblSlikaOd.Text = "/";
             // 
             // openFileDialog1
             // 
@@ -192,20 +196,20 @@ namespace DLWMS.WinForms.IB140261
             // 
             this.err.ContainerControl = this;
             // 
-            // textBox1
+            // pbPregledSlika
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 321);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 248);
-            this.textBox1.TabIndex = 9;
+            this.pbPregledSlika.Location = new System.Drawing.Point(140, 60);
+            this.pbPregledSlika.Name = "pbPregledSlika";
+            this.pbPregledSlika.Size = new System.Drawing.Size(200, 168);
+            this.pbPregledSlika.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPregledSlika.TabIndex = 12;
+            this.pbPregledSlika.TabStop = false;
             // 
             // frmStudentSeminarskiIB140261
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 711);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtOpis);
             this.Controls.Add(this.pbSlika);
@@ -222,6 +226,7 @@ namespace DLWMS.WinForms.IB140261
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPregledSlika)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,9 +247,9 @@ namespace DLWMS.WinForms.IB140261
         private System.Windows.Forms.Label lblDatum;
         private System.Windows.Forms.Button btnNazad;
         private System.Windows.Forms.Button btnNaprijed;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblSlikaOd;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ErrorProvider err;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox pbPregledSlika;
     }
 }

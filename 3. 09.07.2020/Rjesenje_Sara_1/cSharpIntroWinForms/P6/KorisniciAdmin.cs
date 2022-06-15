@@ -24,11 +24,12 @@ namespace cSharpIntroWinForms
         {
             InitializeComponent();
             dgvKorisnici.AutoGenerateColumns = false;
+            LoadData();
         }
 
         private void KorisniciAdmin_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
             txtPretraga.Select();
             LoadData_Spolovi();
         }
@@ -75,9 +76,7 @@ namespace cSharpIntroWinForms
         private void txtPretraga_TextChanged(object sender, EventArgs e)
         {
             var filter = txtPretraga.Text.Trim().ToLower();
-            //var spol = cmbSpol.SelectedItem as Spolovi;
-            //var admin = cbAdministrator.Checked;
-
+           
             if (string.IsNullOrEmpty(filter))
             {
                 LoadData();
@@ -86,9 +85,7 @@ namespace cSharpIntroWinForms
 
             var pretraga = konekcijaNaBazu.Korisnici.Where(
                 x => x.Ime.Trim().ToLower().Contains(filter)
-                || x.Prezime.Trim().ToLower().Contains(filter)
-                /*&& x.Spol.Naziv.Contains(spol.Naziv) 
-                && x.Admin == admin*/).ToList();
+                || x.Prezime.Trim().ToLower().Contains(filter)).ToList();
 
             LoadData(pretraga);
         }
@@ -108,6 +105,7 @@ namespace cSharpIntroWinForms
             LoadData(pretraga);
         }
 
+       
         private void btnPrintajPolozene_Click(object sender, EventArgs e)
         {
             var izvjestajKorisnik = dgvKorisnici.DataSource as List<Korisnik>;
@@ -123,6 +121,7 @@ namespace cSharpIntroWinForms
         private async void btnSuma_Click(object sender, EventArgs e)
         {
             var broj = int.Parse(txtUnosBroja.Text);
+
             double suma = 0;
             await Task.Run(() =>
             {

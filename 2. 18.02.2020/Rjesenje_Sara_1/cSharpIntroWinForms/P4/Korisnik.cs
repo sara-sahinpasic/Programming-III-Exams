@@ -1,4 +1,5 @@
-﻿using cSharpIntroWinForms.P10;
+﻿using cSharpIntroWinForms.IB140261;
+using cSharpIntroWinForms.P10;
 using cSharpIntroWinForms.P8;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace cSharpIntroWinForms
     [Table("Korisnik")]
     public class Korisnik
     {
-        public int Id { get; set; }
+        public double Id { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
         public string KorisnickoIme { get; set; }
@@ -27,6 +28,8 @@ namespace cSharpIntroWinForms
 
         public List<PolozeniPredmet> Polozeni { get; set; } = new List<PolozeniPredmet>();
         public virtual List<KorisniciPredmeti> Uspjeh { get; set; } = new List<KorisniciPredmeti>();
+
+        public GodineStudija GodineStudija { get; set; }
 
 
         public override string ToString()

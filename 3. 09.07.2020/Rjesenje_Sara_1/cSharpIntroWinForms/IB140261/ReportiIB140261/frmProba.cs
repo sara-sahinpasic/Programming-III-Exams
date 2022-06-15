@@ -13,7 +13,7 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261
 {
     public partial class frmProba : Form
     {
-        private List<Korisnik> izvjestajKorisnik;
+        private List<Korisnik> _izvjestajKorisnik;
 
         public frmProba()
         {
@@ -22,37 +22,31 @@ namespace cSharpIntroWinForms.IB140261.ReportiIB140261
 
         public frmProba(List<Korisnik> izvjestajKorisnik) : this()
         {
-            this.izvjestajKorisnik = izvjestajKorisnik;
+            this._izvjestajKorisnik = izvjestajKorisnik;
         }
+
 
         private void frmProba_Load(object sender, EventArgs e)
         {
             var tblPredmeti = new dsDLWMS.PredmetiDataTable();
-
-            for (int i = 0; i < izvjestajKorisnik.Count; i++)
+            for (int i = 0; i < _izvjestajKorisnik.Count; i++)
             {
-                for (int j = 0; j < izvjestajKorisnik[i].Uspjeh.Count; j++)
+                var red = tblPredmeti.NewPredmetiRow();
+                red.ImePrezime = _izvjestajKorisnik[i].Ime + " " + _izvjestajKorisnik[i].Prezime;
+
+                for (int j = 0; j < _izvjestajKorisnik[i].Uspjeh.Count; j++)
                 {
-                    var red = tblPredmeti.NewPredmetiRow();
-                    var polozeniPredmet = izvjestajKorisnik[i].Uspjeh[j];
-
-                    red.Predmet = polozeniPredmet.Predmet.Naziv;
-                    red.Datum = polozeniPredmet.Datum;
-                    red.Ocjena = polozeniPredmet.Ocjena.ToString();
-                    red.ImePrezime = polozeniPredmet.Korisnik.Ime + polozeniPredmet.Korisnik.Prezime;
-                    //  red.ImePrezime = izvjestajKorisnik[i].Ime + izvjestajKorisnik[i].Prezime;
-
-                    tblPredmeti.AddPredmetiRow(red);
+                    red.Predmet = _izvjestajKorisnik[i].Uspjeh[j].Predmet.Naziv;
+                    red.Datum = _izvjestajKorisnik[i].Uspjeh[j].Datum;
+                    red.Ocjena = _izvjestajKorisnik[i].Uspjeh[j].Ocjena.ToString();
                 }
-
+                tblPredmeti.AddPredmetiRow(red);
             }
-
             var rds = new ReportDataSource();
             rds.Name = "dsPredmeti";
             rds.Value = tblPredmeti;
 
             this.reportViewer1.LocalReport.DataSources.Add(rds);
-            //this.reportViewer1.LocalReport.SetParameters(rpc);
             this.reportViewer1.RefreshReport();
         }
     }

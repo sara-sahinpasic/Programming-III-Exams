@@ -28,6 +28,17 @@ namespace DLWMS.WinForms.IB140261
 
         private void frmIzvjestajIB140261_Load(object sender, EventArgs e)
         {
+            //pProsjecnaOcjena
+            double prosjek = 0;
+            for (int i = 0; i < _x.Count; i++)
+            {
+                prosjek+=_x[i].Ocjena;
+            }
+            prosjek /= _x.Count;
+            var rpt = new ReportParameterCollection();
+            rpt.Add(new ReportParameter("pProsjecnaOcjena", prosjek.ToString()));
+            
+
             var tblIzvjestaj = new dsDLWMS.IzvjestajDataTable();
 
             for (int i = 0; i < _x.Count; i++)
@@ -46,6 +57,7 @@ namespace DLWMS.WinForms.IB140261
             rds.Name = "dsIzvjestaj";
             rds.Value = tblIzvjestaj;
 
+            this.reportViewer1.LocalReport.SetParameters(rpt);
             this.reportViewer1.LocalReport.DataSources.Add(rds);
             this.reportViewer1.RefreshReport();
         }

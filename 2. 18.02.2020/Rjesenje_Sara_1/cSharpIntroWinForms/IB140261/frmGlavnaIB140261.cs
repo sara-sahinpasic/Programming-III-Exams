@@ -19,8 +19,8 @@ namespace cSharpIntroWinForms.IB140261
 
         private void btnGodineStudija_Click(object sender, EventArgs e)
         {
-            frmGodineStudijaFormIB140261 frmGodineStudijaFormIB140261 = new frmGodineStudijaFormIB140261();
-            frmGodineStudijaFormIB140261.ShowDialog();
+            frmGodineStudija forma = new frmGodineStudija();
+            forma.ShowDialog();
         }
 
         private void btnPolozeniPredmeti_Click(object sender, EventArgs e)
@@ -48,6 +48,11 @@ namespace cSharpIntroWinForms.IB140261
                 suma += i;
             }
             return suma;
+        }
+
+        private void frmGlavnaIB140261_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

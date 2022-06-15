@@ -196,6 +196,7 @@
             this.cmbOcjena.Name = "cmbOcjena";
             this.cmbOcjena.Size = new System.Drawing.Size(56, 21);
             this.cmbOcjena.TabIndex = 7;
+            this.cmbOcjena.SelectedIndexChanged += new System.EventHandler(this.cmbOcjena_SelectedIndexChanged);
             // 
             // err
             // 
@@ -207,6 +208,7 @@
             this.lblUkupnoStudenata.Name = "lblUkupnoStudenata";
             this.lblUkupnoStudenata.Size = new System.Drawing.Size(227, 23);
             this.lblUkupnoStudenata.TabIndex = 8;
+            this.lblUkupnoStudenata.Click += new System.EventHandler(this.lblUkupnoStudenata_Click);
             // 
             // lblProsjecnaOcjena
             // 

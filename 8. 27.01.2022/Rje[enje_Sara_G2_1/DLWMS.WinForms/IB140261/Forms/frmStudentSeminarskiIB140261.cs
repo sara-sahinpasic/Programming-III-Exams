@@ -18,6 +18,8 @@ namespace DLWMS.WinForms.IB140261
     {
         private StudentiPredmeti _x;
         KonekcijaNaBazu _baza = DLWMSdb.Baza;
+        List<PredmetiSeminarksi> predmetiSeminarksi = new List<PredmetiSeminarksi>();
+        int index = 0;
 
         public frmStudentSeminarskiIB140261()
         {
@@ -31,16 +33,26 @@ namespace DLWMS.WinForms.IB140261
         private void frmStudentSeminarskiIB140261_Load(object sender, EventArgs e)
         {
             LoadData();
-            LoadSeminarskeRadove();
+            predmetiSeminarksi = _baza.PredmetiSeminarksi.Where(x => x.Student.Id == _x.Student.Id).ToList();
+            UcitajSlike();
         }
 
-        private void LoadSeminarskeRadove()
+        private void UcitajSlike()
         {
-            var datum = _baza.PredmetiSeminarksi.Select(x => x.DatumDodavanja.ToString());
-            var opis = _baza.PredmetiSeminarksi.Select(x => x.Opis.ToString());
-            lblDatum.Text = $"{datum}";
-            txtTekst.Text = $"{opis}";
+            if(predmetiSeminarksi.Count==0)
+            {
+                lblSlikaOd.Text = $"Slika 0/0";
+                return;
+            }
+            lblSlikaOd.Text = $"Slika {index + 1}/{predmetiSeminarksi.Count}";
+
+            pbPregledSlika.Image = ImageHelper.FromByteToImage(predmetiSeminarksi[index].Slika);
+
+            lblDatum.Text = $"{predmetiSeminarksi[index].DatumDodavanja}";
+            txtTekst.Text = $"{predmetiSeminarksi[index].Opis}";
         }
+
+       
 
         private void LoadData()
         {
@@ -68,6 +80,8 @@ namespace DLWMS.WinForms.IB140261
                     _baza.SaveChanges();
                     MessageBox.Show("Novi zapis pohranjen u bazu!");
                     Ocisti();
+                    predmetiSeminarksi.Add(noviZapis);
+                    UcitajSlike();
                 }
                 else
                     MessageBox.Show("Potrebno unijeti sve podatke!");
@@ -75,7 +89,7 @@ namespace DLWMS.WinForms.IB140261
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}{Environment.NewLine}{ex.InnerException?.Message}");
-            }           
+            }
         }
 
         private void Ocisti()
@@ -94,6 +108,27 @@ namespace DLWMS.WinForms.IB140261
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 pbSlika.Image = Image.FromFile(openFileDialog1.FileName);
+        }
+
+        private void btnNaprijed_Click(object sender, EventArgs e)
+        {
+            index++;
+            if (index >= predmetiSeminarksi.Count)
+            {
+                index = 0;
+            }
+            UcitajSlike();
+
+        }
+
+        private void btnNazad_Click(object sender, EventArgs e)
+        {
+            index--;
+            if (index < 0)
+            {
+                index = predmetiSeminarksi.Count() - 1;
+            }
+            UcitajSlike();
         }
     }
 }

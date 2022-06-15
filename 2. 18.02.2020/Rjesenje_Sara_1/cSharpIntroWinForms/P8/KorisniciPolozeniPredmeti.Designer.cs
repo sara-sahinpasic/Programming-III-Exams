@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cmbPredmeti = new System.Windows.Forms.ComboBox();
             this.dtpDatumPolaganja = new System.Windows.Forms.DateTimePicker();
             this.btnDodajPolozeni = new System.Windows.Forms.Button();
@@ -35,11 +36,13 @@
             this.cmbGodineStudija = new System.Windows.Forms.ComboBox();
             this.btnPrintajUvjerenje = new System.Windows.Forms.Button();
             this.txtOcjene = new System.Windows.Forms.TextBox();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             this.Predmet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Godina = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ocjena = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbPredmeti
@@ -49,7 +52,6 @@
             this.cmbPredmeti.Name = "cmbPredmeti";
             this.cmbPredmeti.Size = new System.Drawing.Size(220, 21);
             this.cmbPredmeti.TabIndex = 0;
-            this.cmbPredmeti.SelectedIndexChanged += new System.EventHandler(this.cmbPredmeti_SelectedIndexChanged);
             // 
             // dtpDatumPolaganja
             // 
@@ -109,6 +111,10 @@
             this.txtOcjene.Size = new System.Drawing.Size(50, 20);
             this.txtOcjene.TabIndex = 8;
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // Predmet
             // 
             this.Predmet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -119,7 +125,7 @@
             // 
             // Godina
             // 
-            this.Godina.DataPropertyName = "GodinaStudija";
+            this.Godina.DataPropertyName = "GodineStudija";
             this.Godina.HeaderText = "Godina";
             this.Godina.Name = "Godina";
             this.Godina.ReadOnly = true;
@@ -158,6 +164,7 @@
             this.Text = "Položeni predmeti korisnika";
             this.Load += new System.EventHandler(this.KorisniciPolozeniPredmeti_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPolozeniPredmeti)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -172,6 +179,7 @@
         private System.Windows.Forms.ComboBox cmbGodineStudija;
         private System.Windows.Forms.Button btnPrintajUvjerenje;
         private System.Windows.Forms.TextBox txtOcjene;
+        private System.Windows.Forms.ErrorProvider err;
         private System.Windows.Forms.DataGridViewTextBoxColumn Predmet;
         private System.Windows.Forms.DataGridViewTextBoxColumn Godina;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ocjena;

@@ -84,13 +84,13 @@
     <Compile Include="IB140261\frmGlavnaIB140261.Designer.cs">
       <DependentUpon>frmGlavnaIB140261.cs</DependentUpon>
     </Compile>
-    <Compile Include="IB140261\frmGodineStudijaFormIB140261.cs">
+    <Compile Include="IB140261\frmGodineStudija.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="IB140261\frmGodineStudijaFormIB140261.Designer.cs">
-      <DependentUpon>frmGodineStudijaFormIB140261.cs</DependentUpon>
+    <Compile Include="IB140261\frmGodineStudija.Designer.cs">
+      <DependentUpon>frmGodineStudija.cs</DependentUpon>
     </Compile>
-    <Compile Include="IB140261\GodineStudijaIB140261.cs" />
+    <Compile Include="IB140261\GodineStudija.cs" />
     <Compile Include="IB140261\Reporti\dsDLWMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -107,6 +107,7 @@
     <Compile Include="P10\MboxHelper.cs" />
     <Compile Include="P10\Predmeti.cs" />
     <Compile Include="P10\Spolovi.cs" />
+    <Compile Include="P4\Korisnik.cs" />
     <Compile Include="P6\KorisniciAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,7 +115,6 @@
       <DependentUpon>KorisniciAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="P4\DBInMemory.cs" />
-    <Compile Include="P4\Korisnik.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,8 +143,8 @@
     <EmbeddedResource Include="IB140261\frmGlavnaIB140261.resx">
       <DependentUpon>frmGlavnaIB140261.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="IB140261\frmGodineStudijaFormIB140261.resx">
-      <DependentUpon>frmGodineStudijaFormIB140261.cs</DependentUpon>
+    <EmbeddedResource Include="IB140261\frmGodineStudija.resx">
+      <DependentUpon>frmGodineStudija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IB140261\Reporti\frmIzvjestajIB140261.resx">
       <DependentUpon>frmIzvjestajIB140261.cs</DependentUpon>

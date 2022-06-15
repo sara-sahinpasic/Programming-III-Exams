@@ -20,18 +20,20 @@ namespace DLWMS.WinForms.Entiteti
         public int GodinaStudija { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public string Naziv => Ime +" "+ Prezime;
+        public string Naziv => Ime + " " + Prezime;
         public DateTime DatumRodjenja { get; set; }
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
-        public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
+        // public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
+        public virtual List<StudentiPredmeti> PolozeniPredmeti { get; set; }
+
         public virtual ICollection<Uloga> Uloge { get; set; }
 
         public double ProsjecnaOcjena
         {
             get
             {
-                if (PolozeniPredmeti.Count == 0)
+                if (!PolozeniPredmeti.Any())
                     return 0;
                 double prosjek = 0;
                 for (int i = 0; i < PolozeniPredmeti.Count; i++)
@@ -43,7 +45,7 @@ namespace DLWMS.WinForms.Entiteti
         }
         public Student()
         {
-            PolozeniPredmeti = new List<PolozeniPredmet>();
+            // PolozeniPredmeti = new List<PolozeniPredmet>();
             Uloge = new HashSet<Uloga>();
         }
         public override string ToString()

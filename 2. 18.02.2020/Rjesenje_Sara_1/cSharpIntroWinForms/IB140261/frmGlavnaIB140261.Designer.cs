@@ -66,7 +66,6 @@ namespace cSharpIntroWinForms.IB140261
             this.btnIzracunajSumu.TabIndex = 2;
             this.btnIzracunajSumu.Text = "Izračunaj sumu";
             this.btnIzracunajSumu.UseVisualStyleBackColor = true;
-      //      this.btnIzracunajSumu.Click += new System.EventHandler(this.btnIzracunajSumu_ClickAsync);
             // 
             // txtUnosBroja
             // 
@@ -86,6 +85,7 @@ namespace cSharpIntroWinForms.IB140261
             this.Controls.Add(this.btnGodineStudija);
             this.Name = "frmGlavnaIB140261";
             this.Text = "Glavna";
+            this.Load += new System.EventHandler(this.frmGlavnaIB140261_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

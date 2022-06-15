@@ -29,7 +29,9 @@ namespace cSharpIntroWinForms.P9
         public DbSet<Spolovi> Spolovi { get; set; }
         public DbSet<Predmeti> Predmeti { get; set; }
         public DbSet<KorisniciPredmeti> KorisniciPredmeti { get; set; }
-        public DbSet<GodineStudijaIB140261> GodineStudija { get; set; }
+        public DbSet<GodineStudija> GodineStudija { get; set; }
+
+        //  public DbSet<GodineStudijaIB140261> GodineStudija { get; set; }
 
 
 

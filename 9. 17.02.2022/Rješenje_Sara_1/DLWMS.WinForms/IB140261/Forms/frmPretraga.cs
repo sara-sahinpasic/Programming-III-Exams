@@ -50,32 +50,42 @@ namespace DLWMS.WinForms
         }
         private void cmbGodinatudija_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Pretraga();
-            var filter = cmbGodinatudija.SelectedItem.ToString();
-            if (string.IsNullOrEmpty(filter) || filter.Contains(" "))
-            {
-                LoadData();
-                return;
-            }
-            var pretraga = _baza.Studenti.Where(x => x.GodinaStudija.ToString().Contains(filter)).ToList();
-            LoadData(pretraga);
+            Pretraga();
+            //var filter = cmbGodinatudija.SelectedItem.ToString();
+            //if (string.IsNullOrEmpty(filter) || filter.Contains(" "))
+            //{
+            //    LoadData();
+            //    return;
+            //}
+            //var pretraga = _baza.Studenti.Where(x => x.GodinaStudija.ToString().Contains(filter)).ToList();
+            //LoadData(pretraga);
 
         }
 
         private void Pretraga()
         {
             var filterImePrezime = txtimePrezime.Text.ToLower().Trim();
-            //var filter = cmbGodinatudija.SelectedItem.ToString();
+            var filterGodinaStudija = cmbGodinatudija.SelectedItem.ToString();
+            List<Student> pretraga = new List<Student>();
 
-            if (string.IsNullOrEmpty(filterImePrezime))
+            if (string.IsNullOrEmpty(filterImePrezime) && filterGodinaStudija.Contains(" "))
             {
                 LoadData();
                 return;
             }
 
-            var pretraga = _baza.Studenti.Where(x => x.Ime.ToLower().Trim().Contains(filterImePrezime)
-                            || x.Prezime.ToLower().Trim().Contains(filterImePrezime)
-                           /* || x.GodinaStudija.ToString().Contains(filter)*/).ToList();
+            if (filterGodinaStudija == " ")
+            {
+                pretraga = _baza.Studenti.Where(x => x.Ime.ToLower().Trim().Contains(filterImePrezime)
+                               || x.Prezime.ToLower().Trim().Contains(filterImePrezime)).ToList();
+            }
+            else
+            {
+                var godinaStudija = int.Parse(filterGodinaStudija);
+                pretraga = _baza.Studenti.Where(x => x.Ime.ToLower().Trim().Contains(filterImePrezime)
+                           || x.Prezime.ToLower().Trim().Contains(filterImePrezime)
+                           && x.GodinaStudija == godinaStudija).ToList();
+            }
 
             LoadData(pretraga);
         }

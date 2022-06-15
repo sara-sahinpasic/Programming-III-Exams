@@ -87,11 +87,6 @@ namespace DLWMS.WinForms.IspitIB140261.Forms
             MessageBox.Show("Zapis je izbrisan!");
         }
 
-        private void ObrisiPotvrde()
-        {
-
-        }
-
         private void btnSpasi_Click(object sender, EventArgs e)
         {
             SaveCSV(@"potvrdeIB140261.csv");

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvKorisnici = new System.Windows.Forms.DataGridView();
             this.Ime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Prezime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,7 +42,9 @@
             this.txtUnosBroja = new System.Windows.Forms.TextBox();
             this.btnSuma = new System.Windows.Forms.Button();
             this.btnPrintajPolozene = new System.Windows.Forms.Button();
+            this.err = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvKorisnici
@@ -158,6 +161,10 @@
             this.btnPrintajPolozene.UseVisualStyleBackColor = true;
             this.btnPrintajPolozene.Click += new System.EventHandler(this.btnPrintajPolozene_Click);
             // 
+            // err
+            // 
+            this.err.ContainerControl = this;
+            // 
             // KorisniciAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +182,7 @@
             this.Text = "Administracija korisnika";
             this.Load += new System.EventHandler(this.KorisniciAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKorisnici)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,5 +203,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn KorisnickoIme;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Admin;
         private System.Windows.Forms.DataGridViewButtonColumn Polozeni;
+        private System.Windows.Forms.ErrorProvider err;
     }
 }

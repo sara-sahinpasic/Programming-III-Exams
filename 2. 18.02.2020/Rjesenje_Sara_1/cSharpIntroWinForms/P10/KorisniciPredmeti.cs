@@ -1,4 +1,5 @@
-﻿using System;
+﻿using cSharpIntroWinForms.IB140261;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,6 @@ namespace cSharpIntroWinForms.P10
         public virtual Predmeti Predmet { get; set; }
         public int Ocjena { get; set; }
         public string Datum { get; set; }
-
+        public GodineStudija GodineStudija { get; set; }
     }
 }
