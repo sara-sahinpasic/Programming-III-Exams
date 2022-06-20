@@ -15,7 +15,7 @@ namespace cSharpIntroWinForms.IB140261
     public partial class frmNovaPorukaIB140261 : Form
     {
         KonekcijaNaBazu baza = DLWMS.DB;
-        private KorisniciPorukeIB140261 selektovanaPoruka = null;
+        private KorisniciPorukeIB140261 _korisniciPoruke = null;
         Korisnik _korisnik;
 
         public frmNovaPorukaIB140261(Korisnik korisnik)
@@ -27,7 +27,7 @@ namespace cSharpIntroWinForms.IB140261
         public frmNovaPorukaIB140261(KorisniciPorukeIB140261 poruka)
         {
             InitializeComponent();
-            this.selektovanaPoruka = poruka;
+            this._korisniciPoruke = poruka;
             _korisnik = poruka.Korisnik;
             UcitajPoruku();
 
@@ -35,9 +35,9 @@ namespace cSharpIntroWinForms.IB140261
 
         private void UcitajPoruku()
         {
-            txtSadrzaj.Text = selektovanaPoruka.Poruke;
-            if (selektovanaPoruka.Slika != null)
-                pbSlika.Image = ImageHelper.FromByteToImage(selektovanaPoruka.Slika);
+            txtSadrzaj.Text = _korisniciPoruke.Poruke;
+            if (_korisniciPoruke.Slika != null)
+                pbSlika.Image = ImageHelper.FromByteToImage(_korisniciPoruke.Slika);
 
             txtSadrzaj.ReadOnly = true;
         }
@@ -50,7 +50,7 @@ namespace cSharpIntroWinForms.IB140261
 
         private void btnSpasi_Click(object sender, EventArgs e)
         {
-            if (selektovanaPoruka != null)
+            if (_korisniciPoruke != null)
                 this.Close(); // neće se izvršiti kod ukoliko se pozove konstruktor sa Korisnik objektom
 
             var unos = txtSadrzaj.Text;
@@ -74,7 +74,7 @@ namespace cSharpIntroWinForms.IB140261
 
         private void pbSlika_Click(object sender, EventArgs e) //prikaz upload-ovane slike (bez icon za error)
         {
-            if (selektovanaPoruka != null)
+            if (_korisniciPoruke != null)
                 return;
 
             var rezultat = openFileDialog1.ShowDialog();

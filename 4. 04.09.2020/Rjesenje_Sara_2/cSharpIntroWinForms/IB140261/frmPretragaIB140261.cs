@@ -96,9 +96,11 @@ namespace cSharpIntroWinForms.IB140261
         {
             if (e.ColumnIndex == 4)
             {
-                KorisniciPredmeti korisniciPredmeti = dgvPretragaPredmeta.CurrentRow.DataBoundItem as KorisniciPredmeti;
+                KorisniciPredmeti korisniciPredmeti = dgvPretragaPredmeta.CurrentRow.DataBoundItem 
+                    as KorisniciPredmeti;
 
-                frmPorukeIB140261 frmPorukeIB140261 = new frmPorukeIB140261(korisniciPredmeti.Korisnik);
+                frmPorukeIB140261 frmPorukeIB140261 = new frmPorukeIB140261
+                    (korisniciPredmeti.Korisnik);
                 frmPorukeIB140261.Show();
             }
         }
