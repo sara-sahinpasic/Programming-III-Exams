@@ -1,4 +1,5 @@
 ﻿using DLWMS.WinForms.Entiteti;
+using DLWMS.WinForms.IspitIB140261;
 using System.Data.Entity;
 
 namespace DLWMS.WinForms.Helpers
@@ -14,6 +15,8 @@ namespace DLWMS.WinForms.Helpers
         public virtual DbSet<Predmet> Predmet { get; set; }
         public virtual DbSet<StudentiPredmeti> StudentiPredmeti { get; set; }
         public virtual DbSet<Uloga> Uloge { get; set; }
+        public virtual DbSet<StudentiCovidTestoviIB140261> StudentiCovidTestovi { get; set; }
+
 
 
 

@@ -96,6 +96,24 @@
     <Compile Include="Helpers\DLWMSdb.cs" />
     <Compile Include="Entiteti\StudentiPredmeti.cs" />
     <Compile Include="Entiteti\Uloge.cs" />
+    <Compile Include="IspitIB140261\frmCovidTestIB140261.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IspitIB140261\frmCovidTestIB140261.Designer.cs">
+      <DependentUpon>frmCovidTestIB140261.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IspitIB140261\frmIzvjestaji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IspitIB140261\frmIzvjestaji.Designer.cs">
+      <DependentUpon>frmIzvjestaji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IspitIB140261\Report\dsDLWMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IspitIB140261\StudentiCovidTestoviIB140261.cs" />
     <Compile Include="Izvjestaji\dsDLWMS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +167,13 @@
     <EmbeddedResource Include="frmGlavna.resx">
       <DependentUpon>frmGlavna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IspitIB140261\frmCovidTestIB140261.resx">
+      <DependentUpon>frmCovidTestIB140261.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IspitIB140261\frmIzvjestaji.resx">
+      <DependentUpon>frmIzvjestaji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IspitIB140261\Report\rptIzvjestaj.rdlc" />
     <EmbeddedResource Include="Izvjestaji\frmIzvjestaji.resx">
       <DependentUpon>frmIzvjestaji.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +205,17 @@
     </Compile>
     <None Include="DLWMS.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="IspitIB140261\Report\dsDLWMS.xsc">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
+    </None>
+    <None Include="IspitIB140261\Report\dsDLWMS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDLWMS.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IspitIB140261\Report\dsDLWMS.xss">
+      <DependentUpon>dsDLWMS.xsd</DependentUpon>
     </None>
     <None Include="Izvjestaji\dsDLWMS.xsc">
       <DependentUpon>dsDLWMS.xsd</DependentUpon>

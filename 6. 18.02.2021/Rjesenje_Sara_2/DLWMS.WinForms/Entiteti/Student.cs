@@ -24,6 +24,7 @@ namespace DLWMS.WinForms.Entiteti
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
         public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
+
         public virtual ICollection<Uloga> Uloge { get; set; }
         public Student()
         {
@@ -34,5 +35,19 @@ namespace DLWMS.WinForms.Entiteti
         {
             return $"{Ime} {Prezime}";
         }
+        public virtual List<StudentiPredmeti> StudentiPredmeti { get; set; }
+        public double Prosjek {
+            get
+            {
+                if (StudentiPredmeti.Count == 0)
+                    return 0;
+
+                double prosjek = 0;
+                for (int i = 0; i < StudentiPredmeti.Count; i++)
+                {
+                    prosjek += StudentiPredmeti[i].Ocjena;
+                }
+                return prosjek / StudentiPredmeti.Count;
+            } }
     }
 }

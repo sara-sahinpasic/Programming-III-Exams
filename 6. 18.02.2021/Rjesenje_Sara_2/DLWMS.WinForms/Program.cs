@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DLWMS.WinForms.Forme;
+using System;
 using System.Windows.Forms;
 
 namespace DLWMS.WinForms
@@ -13,7 +14,7 @@ namespace DLWMS.WinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Form forma = new frmGlavna();
+            Form forma = new frmStudenti();
             Application.Run(forma);
         }
     }
