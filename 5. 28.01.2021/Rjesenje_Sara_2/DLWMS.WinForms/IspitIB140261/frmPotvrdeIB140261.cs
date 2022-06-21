@@ -91,7 +91,6 @@ namespace DLWMS.WinForms.IspitIB140261
 
         private void btnSpasiUFajl_Click(object sender, EventArgs e)
         {
-            //1. kreirati metodu za spašavanje:
             SaveCSV(@"potvrdeIB140261.csv");
             MessageBox.Show("Fajl je sačuvan!");
         }
