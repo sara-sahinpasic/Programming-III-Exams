@@ -20,7 +20,7 @@ namespace DLWMS.WinForms.Entiteti
         public int GodinaStudija { get; set; }
         public string Ime { get; set; }
         public string Prezime { get; set; }
-        public DateTime DatumRodjenja { get; set; }     
+        public DateTime DatumRodjenja { get; set; }
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
         public List<PolozeniPredmet> PolozeniPredmeti { get; set; }
@@ -34,5 +34,23 @@ namespace DLWMS.WinForms.Entiteti
         {
             return $"{Ime} {Prezime}";
         }
+
+        public virtual List<StudentiPredmeti> StudentiPredmeti { get; set; }
+        public double ProsjecnaOcjena
+        {
+            get
+            {
+                if (StudentiPredmeti.Count == 0)
+                    return 0;
+
+                double prosjek = 0;
+                for (int i = 0; i < StudentiPredmeti.Count; i++)
+                {
+                    prosjek += StudentiPredmeti[i].Ocjena;
+                }
+                return prosjek / StudentiPredmeti.Count;
+            }
+        }
+
     }
 }
