@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DLWMS.WinForms.IspitIB140261
+{
+    [Table("PredmetiSeminarski")]
+    public class PredmetiSeminarskiIB140261
+    {
+        public int Id { get; set; }
+        public Student Studenti { get; set; }
+        public PredmetiIB140261 Predmeti { get; set; }
+        public byte[] Slika { get; set; }
+        public string Opis { get; set; }
+        public DateTime DatumDodavanja { get; set; }
+    }
+}
