@@ -1,0 +1,99 @@
+﻿using DLWMS.WinForms.Entiteti;
+using DLWMS.WinForms.Helpers;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DLWMS.WinForms.IspitIB140261
+{
+    public partial class frmNoviScanIspitaIB140261 : Form
+    {
+        private KorisniciIspitiScanIB140261 _source;
+        KonekcijaNaBazu _baza = DLWMSdb.Baza;
+        private Student _studenti;
+
+        public frmNoviScanIspitaIB140261()
+        {
+            InitializeComponent();
+        }
+
+        public frmNoviScanIspitaIB140261(KorisniciIspitiScanIB140261 source) : this()
+        {
+            this._source = source;
+        }
+
+        public frmNoviScanIspitaIB140261(Student studenti):this()
+        {
+            this._studenti = studenti;
+        }
+
+        private void frmNoviScanIspitaIB140261_Load(object sender, EventArgs e)
+        {
+            //try
+            //{
+
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show($"{ex.Message}{Environment.NewLine}{ex.InnerException?.Message}");
+            //}
+            UcitaJPredmete();
+        }
+
+        private void UcitaJPredmete()
+        {
+            cmbPredmeti.ValueMember = "Id";
+            cmbPredmeti.DisplayMember = "Naziv";
+            cmbPredmeti.DataSource = _baza.Predmet.ToList();
+        }
+
+        private void btnSpasi_Click(object sender, EventArgs e)
+        {
+            var predmet = cmbPredmeti.SelectedItem as Predmet;
+            var napomena = txtNapomena.Text;
+            var slika = pbSlika.Image;
+            var varanje = cbVaranje.Checked;
+            if (ValidirajUnos())
+            {
+                KorisniciIspitiScanIB140261 noviZapis = new KorisniciIspitiScanIB140261();
+                //noviZapis.Studenti = _source.Studenti;
+                noviZapis.Studenti = _studenti;
+                noviZapis.Predmeti = predmet;
+                noviZapis.Napomena = napomena;
+                noviZapis.Ispit = ImageHelper.FromImageToByte(slika);
+                noviZapis.Varanje = varanje;
+
+                _baza.KorisniciIspitiScan.Add(noviZapis);
+
+                _baza.SaveChanges();
+                MessageBox.Show("Zapis sačuvan...");
+                this.Close();
+            }
+            else
+                MessageBox.Show("Potrebno unijeti sva tražena polja...");
+
+        }
+
+        private bool ValidirajUnos()
+        {
+            return Validator.ValidirajKontrolu(cmbPredmeti, err, Poruke.ObaveznaVrijednost) &&
+                Validator.ValidirajKontrolu(txtNapomena, err, Poruke.ObaveznaVrijednost) &&
+                Validator.ValidirajKontrolu(pbSlika, err, Poruke.ObaveznaVrijednost);
+        }
+
+        private void pbSlika_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                var slikaPutanja = Image.FromFile(openFileDialog1.FileName);
+                pbSlika.Image = slikaPutanja;
+            }
+        }
+    }
+}

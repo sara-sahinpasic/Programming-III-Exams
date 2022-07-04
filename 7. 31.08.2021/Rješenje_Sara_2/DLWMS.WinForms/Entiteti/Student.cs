@@ -25,8 +25,8 @@ namespace DLWMS.WinForms.Entiteti
         public DateTime DatumRodjenja { get; set; }
         public bool Aktivan { get; set; }
         public virtual Spol Spol { get; set; }
-        public virtual ICollection<StudentiPredmeti> StudentiPredmeti { get; set; }
         public virtual ICollection<Uloga> Uloge { get; set; }
+        public virtual /*ICollection*/ List<StudentiPredmeti> StudentiPredmeti { get; set; }
 
         public double ProsjecnaOcjena
         {
