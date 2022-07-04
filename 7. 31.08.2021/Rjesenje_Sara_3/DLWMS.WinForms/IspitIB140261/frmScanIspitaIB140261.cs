@@ -14,7 +14,7 @@ namespace DLWMS.WinForms.IspitIB140261
 {
     public partial class frmScanIspitaIB140261 : Form
     {
-        private Student _source;
+        private Student _sourceStudneti;
         KonekcijaNaBazu _baza = DLWMSdb.Baza;
 
         public frmScanIspitaIB140261()
@@ -25,7 +25,7 @@ namespace DLWMS.WinForms.IspitIB140261
 
         public frmScanIspitaIB140261(Student source) : this()
         {
-            this._source = source;
+            this._sourceStudneti = source;
         }
 
         private void frmScanIspitaIB140261_Load(object sender, EventArgs e)
@@ -38,9 +38,9 @@ namespace DLWMS.WinForms.IspitIB140261
             try
             {
                 dgvPretraga.DataSource = null;
-                dgvPretraga.DataSource = korisniciIspitiScan ?? _baza.KorisniciIspitiScan.Where(x => x.Studenti.Id == _source.Id).ToList();
+                dgvPretraga.DataSource = korisniciIspitiScan ?? _baza.KorisniciIspitiScan.Where(x => x.Studenti.Id == _sourceStudneti.Id).ToList();
 
-                lblPregledIspitaStudent.Text = $"{_source.ImePrezime}";
+                lblPregledIspitaStudent.Text = $"{_sourceStudneti.ImePrezime}";
 
             }
             catch (Exception ex)
@@ -62,8 +62,8 @@ namespace DLWMS.WinForms.IspitIB140261
         {
             /*ŠTA AKO U BAZI TRENUTNO NEMA NITI JOŠ JEDAN ZAPIS (NULL)*/
 
-            var source = dgvPretraga.CurrentRow.DataBoundItem as KorisniciIspitiScanIB140261;
-            frmNoviScanIspitaIB140261 frm = new frmNoviScanIspitaIB140261(source.Studenti);
+            //var source = dgvPretraga.CurrentRow.DataBoundItem as KorisniciIspitiScanIB140261;
+            frmNoviScanIspitaIB140261 frm = new frmNoviScanIspitaIB140261(_sourceStudneti);
             frm.ShowDialog();
             LoadData();
         }

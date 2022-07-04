@@ -140,7 +140,7 @@ namespace DLWMS.WinForms.IspitIB140261
             this.Controls.Add(this.label1);
             this.Name = "frmNoviScanIspitaIB140261";
             this.Text = "frmNoviScanIspitaIB140261";
-            this.Load += new System.EventHandler(this.frmNoviScanIspitaIB140261_Load);
+          //  this.Load += new System.EventHandler(this.frmNoviScanIspitaIB140261_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbSlika)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.err)).EndInit();
             this.ResumeLayout(false);

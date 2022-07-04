@@ -14,38 +14,47 @@ namespace DLWMS.WinForms.IspitIB140261
 {
     public partial class frmNoviScanIspitaIB140261 : Form
     {
-        private KorisniciIspitiScanIB140261 _source;
-        KonekcijaNaBazu _baza = DLWMSdb.Baza;
+        private KorisniciIspitiScanIB140261 _sourceKorisniciIspitiScan;
         private Student _studenti;
+
+        KonekcijaNaBazu _baza = DLWMSdb.Baza;
 
         public frmNoviScanIspitaIB140261()
         {
             InitializeComponent();
         }
-
-        public frmNoviScanIspitaIB140261(KorisniciIspitiScanIB140261 source) : this()
-        {
-            this._source = source;
-        }
-
-        public frmNoviScanIspitaIB140261(Student studenti):this()
+        // za kreiranje ispita
+        public frmNoviScanIspitaIB140261(Student studenti) : this()
         {
             this._studenti = studenti;
-        }
-
-        private void frmNoviScanIspitaIB140261_Load(object sender, EventArgs e)
-        {
-            //try
-            //{
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"{ex.Message}{Environment.NewLine}{ex.InnerException?.Message}");
-            //}
             UcitaJPredmete();
         }
+        // za pregledanje ispita
+        public frmNoviScanIspitaIB140261(KorisniciIspitiScanIB140261 source) : this()
+        {
+            this._sourceKorisniciIspitiScan = source;
+            PregledIspita(source);
+        }
 
+        private void PregledIspita(KorisniciIspitiScanIB140261 source)
+        {
+            cmbPredmeti.ValueMember = "Id";
+            cmbPredmeti.DisplayMember = "Naziv";
+            cmbPredmeti.Items.Add(source.Predmeti);
+            cmbPredmeti.SelectedIndex = 0;
+
+            txtNapomena.Text = source.Napomena;
+            cbVaranje.Checked = source.Varanje;
+
+            if (source.Ispit != null)
+                pbSlika.Image = ImageHelper.FromByteToImage(source.Ispit);
+
+            cmbPredmeti.Enabled = false;
+            txtNapomena.ReadOnly = true;
+            cbVaranje.Enabled = false;
+            pbSlika.Enabled = false;
+        }
+      
         private void UcitaJPredmete()
         {
             cmbPredmeti.ValueMember = "Id";

@@ -34,12 +34,19 @@ namespace DLWMS.WinForms.IspitIB140261
             LoadData();
         }
 
-        private void LoadData(List<Student> student = null)
+        private void LoadData(List<Student> studenti = null)
         {
             try
             {
+                //dgvPretraga.DataSource = null;
+                //dgvPretraga.DataSource = studenti ?? _baza.Studenti.ToList();
+
+                studenti = studenti ?? _baza.Studenti.ToList();
                 dgvPretraga.DataSource = null;
-                dgvPretraga.DataSource = student ?? _baza.Studenti.ToList();
+                dgvPretraga.DataSource = studenti;
+
+                NajveciProsjek(studenti);
+                IzracunajProsjek(studenti);
             }
             catch (Exception ex)
             {
@@ -47,34 +54,27 @@ namespace DLWMS.WinForms.IspitIB140261
             }
         }
 
-        private void txtImePrezime_TextChanged(object sender, EventArgs e)
+        private void IzracunajProsjek(List<Student> studenti)
         {
-            var filter = txtImePrezime.Text.Trim().ToLower();
-            if (string.IsNullOrEmpty(filter))
-            {
-                LoadData();
-                return;
-            }
-            var pretraga = _baza.Studenti.Where(x =>
-                (x.Ime.Trim().ToLower().Contains(filter)
-                || x.Prezime.Trim().ToLower().Contains(filter))).ToList();
-
             double prosjek = 0;
-            for (int i = 0; i < pretraga.Count; i++)
+            for (int i = 0; i < studenti.Count; i++)
             {
-                prosjek += pretraga[i].Prosjek;
+                prosjek += studenti[i].Prosjek;
             }
-            prosjek /= pretraga.Count();
+            prosjek /= studenti.Count();
             lblProsjek.Text = $"Prosjek prikazanih ocjena: {Math.Round(prosjek, 2)}";
+        }
 
+        private void NajveciProsjek(List<Student> studenti)
+        {
             double max = 0;
             string student = "";
-            for (int i = 0; i < pretraga.Count; i++)
+            for (int i = 0; i < studenti.Count; i++)
             {
-                if (max < pretraga[i].Prosjek)
+                if (max < studenti[i].Prosjek)
                 {
-                    max = pretraga[i].Prosjek;
-                    student = pretraga[i].ImePrezime;
+                    max = studenti[i].Prosjek;
+                    student = studenti[i].ImePrezime;
                 }
             }
             if (max <= 5)
@@ -85,6 +85,33 @@ namespace DLWMS.WinForms.IspitIB140261
             {
                 lblMaxProsjekOstvario.Text = $"Najveći prosjek ostvario: {student}";
             }
+        }
+
+        //private void LoadData(List<Student> student = null)
+        //{
+        //    try
+        //    {
+        //        dgvPretraga.DataSource = null;
+        //        dgvPretraga.DataSource = student ?? _baza.Studenti.ToList();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show($"{ex.Message}{Environment.NewLine}{ex.InnerException?.Message}");
+        //    }
+        //}
+
+        private void txtImePrezime_TextChanged(object sender, EventArgs e)
+        {
+            var filter = txtImePrezime.Text.Trim().ToLower();
+            if (string.IsNullOrEmpty(filter))
+            {
+                LoadData();
+
+                return;
+            }
+            var pretraga = _baza.Studenti.Where(x =>
+                (x.Ime.Trim().ToLower().Contains(filter)
+                || x.Prezime.Trim().ToLower().Contains(filter))).ToList();
 
             LoadData(pretraga);
         }
